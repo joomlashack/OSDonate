@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension type="module" version="1.6.0" client="site" method="upgrade">
 	<name>OSDonate</name>
-	<author>Nick Savov from OsTraining.com</author>
+	<author>Nick Savov from OSTraining.com</author>
 	<creationDate>January 2011</creationDate>
-	<copyright>(C) 2011 OsTraining.com</copyright>
+	<copyright>(C) 2011 OSTraining.com</copyright>
 	<license>GNU/GPL http://www.gnu.org/copyleft/gpl.html</license>
 	<authorEmail>nick@ostraining.com</authorEmail>
 	<authorUrl>http://www.ostraining.com</authorUrl>
-	<version>1.0.1</version>
+	<version>1.1.1</version>
 	<description>PLUGIN_DESC</description>
 	
 	<languages>
@@ -80,15 +80,6 @@
 				<field name="font_color" type="text" size="16" default="" label="FONT_COLOR_LABEL" description="FONT_COLOR_DESC" />
 				
 				<field name="width_of_sticky_hover" type="text" size="5" default="200" label="WIDTH_LABEL" description="WIDTH_DESCRIPTION" />	
-			</fieldset>
-			
-			<fieldset name="affiliate" label="AFFILIATE_OPTIONS">
-				<field name="show_powered_by" type="radio" default="1" label="SHOW_POWERED_BY_LABEL" description="SHOW_POWERED_BY_DESC">
-					<option value="1">JYES</option>
-					<option value="0">JN0</option>
-				</field>
-				<field name="affiliate_id" type="text" size="5" default="" label="Affiliate ID #" description="AFFILIATE_ID_DESC" />
-				<field name="weblink" type="text" size="32" default="" label="WEBLINK_LABEL" description="WEBLINK_DESC" />
 			</fieldset>
 			
 		</fields>

@@ -93,14 +93,6 @@
 	}
 	
 	$fontColor = $params->get('font_color');
-	
-	$webLink = $params->get('weblink');
-	$affiliateID = $params->get('affiliate_id');
-	
-	$affilateLink = '';
-	if ($params->get('show_powered_by')) {
-		$affilateLink .= "http://www.ostraining.com/idevaffiliate/idevaffiliate.php?id=" . $affiliateID ;
-	}
 
 	$widthOfModule = $params->get('width_of_sticky_hover');
 	
@@ -144,12 +136,4 @@
 			<input type="image" src="<?php echo $params->get('pp_image', ''); ?>" name="submit" alt="PayPal secure payments." />
 			
 		</form>
-		<?php 
-			if ($webLink != '')
-			{echo "<p>Powered by <a href=" . $WebLink . " target=\"_blank\">OsTraining.com</a></p>";
-			}
-			elseif ($affilateLink != '')
-			{echo "<p>Powered by <a href=" . $affilateLink . " target=\"_blank\">OSTraining.com</a></p>";
-			}
-		?>
 	</div>
