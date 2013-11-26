@@ -36,7 +36,7 @@
 	if (!$params->get('show_amount')) {
 		$amountLine .= '<input type="hidden" name="amount" value="'.$params->get('amount').'" />'."\n";
 	} else {
-		$amountLine .= JText::_('Amount').':&nbsp;<input type="text" name="amount" size="4" maxlength="10" value="'.$params->get('amount').'" style="text-align:right;" />'."\n";
+		$amountLine .= JText::_('AMOUNT_LABEL').':&nbsp;<input type="text" name="amount" size="4" maxlength="10" value="'.$params->get('amount').'" style="text-align:right;" />'."\n";
 	}
 	
 	//need more comments when I have some time
@@ -128,6 +128,7 @@
 			<input type="hidden" name="undefined_quantity" value="0" />
 			<input type="hidden" name="item_name" value="<?php echo $params->get('item_name', ''); ?>" />
 			<?php echo $amountLine . $fe_c; ?>
+                      <input type="hidden" name="rm" value="2" /> 
 			<input type="hidden" name="charset" value="utf-8" />
 			<input type="hidden" name="no_shipping" value="1" />
 			<input type="hidden" name="image_url" value="<?php echo $params->get('image_url', ''); ?>" />

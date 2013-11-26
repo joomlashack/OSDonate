@@ -7,7 +7,7 @@
 	<license>GNU/GPL http://www.gnu.org/copyleft/gpl.html</license>
 	<authorEmail>nick@ostraining.com</authorEmail>
 	<authorUrl>http://www.ostraining.com</authorUrl>
-	<version>1.1.1</version>
+	<version>1.1.2</version>
 	<description>PLUGIN_DESC</description>
 	
 	<languages>
@@ -84,6 +84,9 @@
 			
 		</fields>
     </config>
+	
+    <updateservers>
+        <server type="extension" priority="1" name="OSDonate Updates"><![CDATA[http://updates.ostraining.com/osdonate.xml]]></server>
+    </updateservers>
 
-  
 </extension>
