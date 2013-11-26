@@ -1,6 +1,6 @@
 <?php
 /*
-* @package OSDonate Module 1.0.0 for Joomla 1.6 and 1.5 from OSTraining.com
+* @package OSDonate Module 1.0.0 for Joomla 3.x, 2.5, 1.7, 1.6 and 1.5 from OSTraining.com
 * Credit to VeroPlus.com for much of the code and inspiration
 * @copyright (C) 2010 VeroPlus.com Copyright (C) 2011 OsTraining.com. All rights reserved.
 * @license http://www.gnu.org/copyleft/gpl.html GNU/GPL, see license.txt
@@ -11,6 +11,9 @@
 // no direct access
 	defined( '_JEXEC' ) or die( 'Restricted access' );
 	
+    //load css
+    $document = JFactory::getDocument();
+    $document->addStyleSheet(JURI::base() . 'modules/mod_osdonate/css/style.css');
 	//Return the selected paypal language from the module parameters
 	//substr returns part of the string.  
 	//In this case substr starts at the first character and returns 1 more (2 total)
@@ -36,7 +39,7 @@
 	if (!$params->get('show_amount')) {
 		$amountLine .= '<input type="hidden" name="amount" value="'.$params->get('amount').'" />'."\n";
 	} else {
-		$amountLine .= JText::_('AMOUNT_LABEL').':&nbsp;<input type="text" name="amount" size="4" maxlength="10" value="'.$params->get('amount').'" style="text-align:right;" />'."\n";
+		$amountLine .= JText::_('AMOUNT_LABEL').':<br/><input type="text" name="amount" size="4" maxlength="10" value="'.$params->get('amount').'" style="text-align:right;" />'."\n";
 	}
 	
 	//need more comments when I have some time
@@ -121,14 +124,14 @@
 
 	
 	
-		<form action="https://www.paypal.com/<?php echo $langSite; ?>cgi-bin/webscr" method="post" <?php echo $target; ?>>
+		<form class="osdonate-form" action="https://www.paypal.com/<?php echo $langSite; ?>cgi-bin/webscr" method="post" <?php echo $target; ?>>
 			<input type="hidden" name="cmd" value="_donations" />
 			<input type="hidden" name="business" value="<?php echo $params->get('business', ''); ?>" />
 			<input type="hidden" name="return" value="<?php echo $params->get('return', ''); ?>" />
 			<input type="hidden" name="undefined_quantity" value="0" />
 			<input type="hidden" name="item_name" value="<?php echo $params->get('item_name', ''); ?>" />
 			<?php echo $amountLine . $fe_c; ?>
-                      <input type="hidden" name="rm" value="2" /> 
+			<input type="hidden" name="rm" value="2" /> 
 			<input type="hidden" name="charset" value="utf-8" />
 			<input type="hidden" name="no_shipping" value="1" />
 			<input type="hidden" name="image_url" value="<?php echo $params->get('image_url', ''); ?>" />
