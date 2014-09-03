@@ -105,8 +105,7 @@
     </config>
 
     <updateservers>
-        <server type="extension" priority="1" name="OSDonate Updates">
-            <![CDATA[http://updates.ostraining.com/osdonate.xml]]></server>
+        <server type="extension" priority="1" name="OSDonate Module"><![CDATA[http://deploy.ostraining.com/updates/joomla/mod_osdonate.xml]]></server>
     </updateservers>
 
 </extension>
