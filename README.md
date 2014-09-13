@@ -6,7 +6,7 @@ OSDonate
 
 OSDonate - Hover your Paypal Donate button with style
 
-Created by http://www.OSTraining.com. Instructions (for detailed instructions include screenshots, please visit http://www.OsTraining.com):
+## Instructions:
 
 1) Access Module: Extensions >> Module Manager >> OSDonate
 
