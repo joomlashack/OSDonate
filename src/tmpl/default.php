@@ -19,9 +19,9 @@ $document->addStyleSheet(JURI::base() . 'modules/mod_osdonate/css/style.css');
 //Return the selected paypal language from the module parameters
 //substr returns part of the string.
 //In this case substr starts at the first character and returns 1 more (2 total)
-//e.g. substr(en_US, 0, 2); //will return "en"
+//e.g. substr(en_US, 3, 2); //will return "US"
 //instead of using substr, we could have set the local values to just the lower case code.
-//e.g. "en_US" could be "en"
+//e.g. "en_US" could be "US"
 $langSite = substr($params->get('locale'), 3, 2);
 //$langSite will never be null so if statement will always execute
 if (!$langSite) {
