@@ -22,10 +22,10 @@ $document->addStyleSheet(JURI::base() . 'modules/mod_osdonate/css/style.css');
 //e.g. substr(en_US, 0, 2); //will return "en"
 //instead of using substr, we could have set the local values to just the lower case code.
 //e.g. "en_US" could be "en"
-$langSite = substr($params->get('locale'), 0, 2);
+$langSite = substr($params->get('locale'), 3, 2);
 //$langSite will never be null so if statement will always execute
-if ($langSite != '') {
-    $langSite .= '/';
+if (!$langSite) {
+    $langSite = 'US';
 }
 
 //get intro text if there is any
@@ -154,7 +154,7 @@ echo $introtext;
 
 
 
-<form class="osdonate-form" action="https://www.paypal.com/<?php echo $langSite; ?>cgi-bin/webscr"
+<form class="osdonate-form" action="https://www.paypal.com/cgi-bin/webscr"
       method="post" <?php echo $target; ?>>
     <input type="hidden" name="cmd" value="_donations"/>
     <input type="hidden" name="business" value="<?php echo $params->get('business', ''); ?>"/>
@@ -169,6 +169,6 @@ echo $introtext;
     <input type="hidden" name="cancel_return" value="<?php echo $params->get('cancel_return', ''); ?>"/>
     <input type="hidden" name="no_note" value="0"/><br/><br/>
     <input type="image" src="<?php echo $params->get('pp_image', ''); ?>" name="submit" alt="PayPal secure payments."/>
-
+    <input type="hidden" name="lc" value="<?php echo $langSite; ?>">
 </form>
 </div>
