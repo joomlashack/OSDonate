@@ -10,10 +10,13 @@
     <version>1.1.5</version>
     <description>MOD_OSDONATE_DESCRIPTION</description>
 
+	<languages folder="language">
+    		<language tag="en-GB">en-GB/en-GB.mod_osdonate.ini/language>
+	</languages>
+	
     <files>
         <filename module="mod_osdonate">mod_osdonate.php</filename>
         <folder>css</folder>
-        <folder>language</folder>
         <folder>tmpl</folder>
     </files>
 
