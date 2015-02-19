@@ -56,6 +56,7 @@ $availableCurrencies = Array(
     'EUR',
     'USD',
     'GBP',
+    'BRL',
     'CHF',
     'AUD',
     'HKD',
