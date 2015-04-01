@@ -32,7 +32,7 @@ if (!$langSite) {
 //need more comments when I have some time
 $introtext = '';
 if ($params->get('show_text', 1)) {
-    $introtext = '<p align="left">' . $params->get('intro_text', '') . '</p>' . "\n";
+    $introtext = '<p class="osdonate-introtext">' . $params->get('intro_text', '') . '</p>' . "\n";
 }
 
 
@@ -45,7 +45,7 @@ if (!$params->get('show_amount')) {
             'MOD_OSDONATE_AMOUNT_LABEL'
         ) . ':<br/><input type="text" name="amount" size="4" maxlength="10" value="' . $params->get(
             'amount'
-        ) . '" style="text-align:right;" />' . "\n";
+        ) . '" class="osdonate-amount" />' . "\n";
 }
 
 //need more comments when I have some time
@@ -137,14 +137,14 @@ $vertical_reference_side = $params->get('vertical_reference_side');
 $vertical_distance = $params->get('vertical_distance');
 $sticky = '';
 if ($use_sticky_hover == 1) {
-    $sticky .= "<div align=\"center\" style=\"position:fixed;color:";
+    $sticky .= "<div class=\"osdonate-sticky-hover\"";
     $sticky .= $fontColor . ";";
     $sticky .= $horizontal_reference_side . ":";
     $sticky .= $horizontal_distance . "px" . ";";
     $sticky .= $vertical_reference_side . ":";
     $sticky .= $vertical_distance . "px;width:" . $widthOfModule . "px;z-index:1000;\" id=\"osdonatesticky\">";
 } else {
-    $sticky .= "<div align=\"center\" id=\"osdonatestatic\">";
+    $sticky .= "<div id=\"osdonatestatic\">";
 }
 
 echo $sticky;

@@ -9,3 +9,16 @@
 	width:auto;
 	min-width:75px;
 }
+.osdonate-introtext{
+    text-align: left;
+}
+.osdonate-amount{
+    text-align:right;
+}
+.osdonate-sticky-hover{
+    text-align:center;
+    position:fixed;
+}
+#osdonatestatic{
+    text-align:center;
+}
