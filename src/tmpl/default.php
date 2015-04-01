@@ -126,7 +126,7 @@ if ($params->get('open_new_window', 1)) {
     $target = 'target="paypal"';
 }
 
-$fontColor = $params->get('font_color');
+$fontColor = $params->get('font_color', '#333');
 
 $widthOfModule = $params->get('width_of_sticky_hover');
 
@@ -137,7 +137,7 @@ $vertical_reference_side = $params->get('vertical_reference_side');
 $vertical_distance = $params->get('vertical_distance');
 $sticky = '';
 if ($use_sticky_hover == 1) {
-    $sticky .= "<div class=\"osdonate-sticky-hover\"";
+    $sticky .= "<div class=\"osdonate-sticky-hover\" style=\"color:";
     $sticky .= $fontColor . ";";
     $sticky .= $horizontal_reference_side . ":";
     $sticky .= $horizontal_distance . "px" . ";";
