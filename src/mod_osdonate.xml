@@ -11,7 +11,7 @@
     <description>MOD_OSDONATE_DESCRIPTION</description>
 
 	<languages folder="language">
-    		<language tag="en-GB">en-GB/en-GB.mod_osdonate.ini/language>
+    		<language tag="en-GB">en-GB/en-GB.mod_osdonate.ini</language>
 	</languages>
 	
     <files>
