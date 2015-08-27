@@ -22,3 +22,8 @@
 #osdonatestatic{
     text-align:center;
 }
+@media (max-width: 768px) {
+    .osdonate-sticky-hover{
+        position: relative;
+    }
+}
