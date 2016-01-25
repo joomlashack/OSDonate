@@ -97,8 +97,11 @@
                 <field name="vertical_distance" type="text" size="5" default="0" label="MOD_OSDONATE_VERTICAL_DISTANCE_LABEL"
                        description="MOD_OSDONATE_VERTICAL_DISTANCE_DESC"/>
 
-                <field name="font_color" type="text" size="16" default="" label="MOD_OSDONATE_FONT_COLOR_LABEL"
+                <field name="font_color" type="text" label="MOD_OSDONATE_FONT_COLOR_LABEL"
                        description="MOD_OSDONATE_FONT_COLOR_DESC"/>
+                       
+                <field name="bg_color" type="text" label="MOD_OSDONATE_BG_COLOR_LABEL"
+                       description="MOD_OSDONATE_BG_COLOR_DESC"/>
 
                 <field name="width_of_sticky_hover" type="text" size="5" default="200" label="MOD_OSDONATE_WIDTH_LABEL"
                        description="MOD_OSDONATE_WIDTH_DESCRIPTION"/>

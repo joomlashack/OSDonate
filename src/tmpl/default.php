@@ -128,6 +128,8 @@ if ($params->get('open_new_window', 1)) {
 
 $fontColor = $params->get('font_color', '#333');
 
+$bgColor = $params->get('bg_color', 'transparent');
+
 $widthOfModule = $params->get('width_of_sticky_hover');
 
 $use_sticky_hover = $params->get('use_sticky_hover');
@@ -137,12 +139,67 @@ $vertical_reference_side = $params->get('vertical_reference_side');
 $vertical_distance = $params->get('vertical_distance');
 $sticky = '';
 if ($use_sticky_hover == 1) {
-    $sticky .= "<div class=\"osdonate-sticky-hover\" style=\"color:";
-    $sticky .= $fontColor . ";";
-    $sticky .= $horizontal_reference_side . ":";
-    $sticky .= $horizontal_distance . "px" . ";";
-    $sticky .= $vertical_reference_side . ":";
-    $sticky .= $vertical_distance . "px;width:" . $widthOfModule . "px;z-index:1000;\" id=\"osdonatesticky\">";
+    $document->addScriptDeclaration("
+        function setStickyHoverStyle(){
+            //declaring selectors
+            var parentOfOSDonate = jQuery('#osdonatesticky').parent('div');
+            var OSDonate = jQuery('#osdonatesticky');
+            
+            //moving header text inside of #osdonatesticky
+            OSDonate.prev().prependTo(OSDonate);
+            
+            parentOfOSDonate.css({
+                'visibility': 'hidden',
+                'margin': 0,
+                'padding': 0,
+                'min-height': 0,
+                'border': 0,
+            });
+            OSDonate.css({
+                'visibility': 'visible',
+                'color': '".$fontColor."',
+                'background-color': '".$bgColor."',
+                '".$horizontal_reference_side."': '".$horizontal_distance."px',
+                '".$vertical_reference_side."': '".$vertical_distance."px',
+                'width': '".$widthOfModule."px',
+                'z-index': '1000'
+            });
+        }
+        function disableStickyHoverStyle(){
+            //declaring selectors
+            var parentOfOSDonate = jQuery('#osdonatesticky').parent('div');
+            var OSDonate = jQuery('#osdonatesticky');
+            
+            //moving header text back out of #osdonatesticky
+            var headerText = jQuery('#osdonatesticky h3').detach();
+            parentOfOSDonate.prepend(headerText);
+            
+            parentOfOSDonate.attr('style', '');
+            OSDonate.attr('style', '');
+        }
+        
+        jQuery(document).ready(function(){
+            
+            //checking first without resize
+            if (jQuery(window).width() <= 768){	
+                disableStickyHoverStyle();
+            }	
+            else{
+                setStickyHoverStyle();
+            }
+            
+            //when window resizes
+            jQuery(window).resize(function(){
+                if (jQuery(window).width() <= 768){	
+                    disableStickyHoverStyle();
+                }	
+                else{
+                    setStickyHoverStyle();
+                }
+            });
+        });
+    ");
+    $sticky .= "<div class=\"osdonate-sticky-hover\" id=\"osdonatesticky\">";
 } else {
     $sticky .= "<div id=\"osdonatestatic\">";
 }
