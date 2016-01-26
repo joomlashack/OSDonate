@@ -75,8 +75,8 @@
             </fieldset>
 
             <fieldset name="sticky_hover" label="MOD_OSDONATE_STICKY_HOVER_OPTIONS">
-                <field name="use_sticky_hover" type="radio" default="1" label="MOD_OSDONATE_USE_STICKY_HOVER_LABEL"
-                       description="MOD_OSDONATE_USE_STICKY_HOVER_DESC">
+                <field name="use_sticky_hover" type="radio" default="0" label="MOD_OSDONATE_STICKY_HOVER_OPTIONS_LABEL"
+                       description="MOD_OSDONATE_STICKY_HOVER_OPTIONS_DESC">
                     <option value="1">JYES</option>
                     <option value="0">JNO</option>
                 </field>
