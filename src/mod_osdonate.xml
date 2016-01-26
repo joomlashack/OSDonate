@@ -16,6 +16,7 @@
 	
     <files>
         <filename module="mod_osdonate">mod_osdonate.php</filename>
+        <folder>js</folder>
         <folder>css</folder>
         <folder>tmpl</folder>
     </files>
