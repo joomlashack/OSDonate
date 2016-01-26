@@ -138,7 +138,6 @@ $horizontal_distance = $params->get('horizontal_distance');
 $vertical_reference_side = $params->get('vertical_reference_side');
 $vertical_distance = $params->get('vertical_distance');
 $sticky = '';
-$useragent=$_SERVER['HTTP_USER_AGENT'];
 
 if ($use_sticky_hover == 1) {
     $document->addScript(JURI::base() . "modules/mod_osdonate/js/stickyHoverOptions.js");
