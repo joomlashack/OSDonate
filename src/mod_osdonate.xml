@@ -31,13 +31,13 @@
                     <option value="0">JNO</option>
                 </field>
 
-                <field name="return" type="text" size="64" default="http://www.mysite.com/anypage.html"
+                <field name="return" type="menuitem" default="45"
                        label="MOD_OSDONATE_SUCCESS_RETURN_LABEL" description="MOD_OSDONATE_SUCCESS_RETURN_DESC"/>
-                <field name="cancel_return" type="text" size="64" default="http://www.mysite.com/anypage2.html"
+                <field name="cancel_return" type="menuitem" default="45"
                        label="MOD_OSDONATE_CANCEL_RETURN_LABEL" description="MOD_OSDONATE_CANCEL_RETURN_DESC"/>
-                <field name="image_url" type="text" size="64" default="http://www.mysite.com/pathto/logo"
+                <field name="image_url" type="media" directory="/images/"
                        label="MOD_OSDONATE_COMPANY_LOGO_LABEL" description="MOD_OSDONATE_COMPANY_LOGO_DESC"/>
-                <field name="pp_image" type="text" size="64"
+                <field name="pp_image" type="media" directory="/images/"
                        default="https://www.paypal.com/en_US/i/btn/btn_donateCC_LG.gif"
                        label="MOD_OSDONATE_PP_BUTTON_IMAGE_LABEL" description="MOD_OSDONATE_PP_BUTTON_IMAGE_DESC"/>
 
