@@ -13,9 +13,8 @@
 // no direct access
 defined('_JEXEC') or die();
 
-$application = JFactory::getApplication();
-$document = JFactory::getDocument();
 //load css
+$document = JFactory::getDocument();
 $document->addStyleSheet(JURI::base() . 'modules/mod_osdonate/css/style.css');
 //Return the selected paypal language from the module parameters
 //substr returns part of the string.
@@ -116,18 +115,28 @@ if (sizeof($currencies) == 0) {
     }
 }
 
+$application = JFactory::getApplication();
+
+function stripDoubleSlashes($url) {
+    preg_match('/^.+?[^\/:](?=[?\/])|$/', $url, $matches);
+    return $matches[0];
+}
+
 $returnMenuListIds = array(
     $params->get('return', ''),
     $params->get('cancel_return', '')
 );
 
-foreach ($returnMenuListIds as $key => $value) {
+foreach ($returnMenuListIds as $index => $itemId) {
     $menu = $application->getMenu();
-    $link = $menu->getItem($value)->link;
-    if ((strpos($link, "http://") === 0) || (strpos($link, "https://") === 0)) {
-        $linkOfMenuItems[$key] = $link;
+    $link = $menu->getItem($itemId)->link;
+    
+    if (JURI::isInternal($link)) {
+        $linkOfMenuItems[$index] = stripDoubleSlashes(JURI::base()) . JRoute::_('index.php?Itemid=' . $itemId);
+        var_dump($linkOfMenuItems[$index]);
     } else {
-        $linkOfMenuItems[$key] = dirname(juri::base()) . JRoute::_($link);
+        $linkOfMenuItems[$index] = $link;
+        var_dump($linkOfMenuItems[$index]);
     }
 }
 
