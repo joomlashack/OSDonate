@@ -133,10 +133,8 @@ foreach ($returnMenuListIds as $index => $itemId) {
     
     if (JURI::isInternal($link)) {
         $linkOfMenuItems[$index] = stripDoubleSlashes(JURI::base()) . JRoute::_('index.php?Itemid=' . $itemId);
-        var_dump($linkOfMenuItems[$index]);
     } else {
         $linkOfMenuItems[$index] = $link;
-        var_dump($linkOfMenuItems[$index]);
     }
 }
 
