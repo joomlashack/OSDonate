@@ -115,6 +115,29 @@ if (sizeof($currencies) == 0) {
     }
 }
 
+$application = JFactory::getApplication();
+
+function stripDoubleSlashes($url) {
+    preg_match('/^.+?[^\/:](?=[?\/])|$/', $url, $matches);
+    return $matches[0];
+}
+
+$returnMenuListIds = array(
+    $params->get('return', ''),
+    $params->get('cancel_return', '')
+);
+
+foreach ($returnMenuListIds as $index => $itemId) {
+    $menu = $application->getMenu();
+    $link = $menu->getItem($itemId)->link;
+    
+    if (JURI::isInternal($link)) {
+        $linkOfMenuItems[$index] = stripDoubleSlashes(JURI::base()) . JRoute::_('index.php?Itemid=' . $itemId);
+    } else {
+        $linkOfMenuItems[$index] = $link;
+    }
+}
+
 //need more comments when I have some time
 $target = '';
 if ($params->get('open_new_window', 1)) {
@@ -158,15 +181,15 @@ echo $introtext;
       method="post" <?php echo $target; ?>>
     <input type="hidden" name="cmd" value="_donations"/>
     <input type="hidden" name="business" value="<?php echo $params->get('business', ''); ?>"/>
-    <input type="hidden" name="return" value="<?php echo $params->get('return', ''); ?>"/>
+    <input type="hidden" name="return" value="<?php echo $linkOfMenuItems[0]; ?>"/>
     <input type="hidden" name="undefined_quantity" value="0"/>
     <input type="hidden" name="item_name" value="<?php echo $params->get('item_name', ''); ?>"/>
     <?php echo $amountLine . $fe_c; ?>
     <input type="hidden" name="rm" value="2"/>
     <input type="hidden" name="charset" value="utf-8"/>
     <input type="hidden" name="no_shipping" value="1"/>
-    <input type="hidden" name="image_url" value="<?php echo $params->get('image_url', ''); ?>"/>
-    <input type="hidden" name="cancel_return" value="<?php echo $params->get('cancel_return', ''); ?>"/>
+    <input type="hidden" name="image_url" value="<?php echo JURI::base() . $params->get('image_url', ''); ?>"/>
+    <input type="hidden" name="cancel_return" value="<?php echo $linkOfMenuItems[1]; ?>"/>
     <input type="hidden" name="no_note" value="0"/><br/><br/>
     <input type="image" src="<?php echo $params->get('pp_image', ''); ?>" name="submit" alt="PayPal secure payments."/>
     <input type="hidden" name="lc" value="<?php echo $langSite; ?>">
