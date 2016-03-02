@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension type="module" version="1.6.0" client="site" method="upgrade">
-    <name>OS Donate</name>
+    <name>MOD_OSDONATE</name>
     <author>OSTraining</author>
     <creationDate>March 03 2016</creationDate>
     <copyright>Copyright (C) 2011, 2013 OSTraining.com</copyright>
@@ -8,7 +8,7 @@
     <authorEmail>info@ostraining.com</authorEmail>
     <authorUrl>http://www.ostraining.com</authorUrl>
     <version>1.2.0</version>
-    <description>This module allows you to easily show a PayPal donate button.</description>
+    <description>MOD_OSDONATE_DESCRIPTION</description>
 
 	<languages folder="language">
     		<language tag="en-GB">en-GB/en-GB.mod_osdonate.ini</language>
