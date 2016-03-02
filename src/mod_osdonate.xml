@@ -64,6 +64,7 @@
                     <option value="de_DE">de_DE</option>
                     <option value="fr_FR">fr_FR</option>
                     <option value="es_ES">es_ES</option>
+                    <option value="pt_BR">pt_BR</option>
                 </field>
 
                 <field name="show_amount" type="radio" default="1" label="MOD_OSDONATE_SHOW_AMOUNT_FIELD_LABEL"
