@@ -24,36 +24,9 @@
     <config>
         <fields name="params">
             <fieldset name="basic">
-                <field name="moduleclass_sfx" type="text" default="" label="MOD_OSDONATE_MODULE_CLASS_SUFFIX_LABEL"
-                       description="MOD_OSDONATE_MODULE_CLASS_SUFFIX_DESC"/>
-                <field name="open_new_window" type="radio" default="1" label="MOD_OSDONATE_NEW_WINDOW_LABEL"
-                       description="MOD_OSDONATE_NEW_WINDOW_DESC">
-                    <option value="1">JYES</option>
-                    <option value="0">JNO</option>
-                </field>
-
-                <field name="return" type="text" size="64" default="http://www.mysite.com/anypage.html"
-                       label="MOD_OSDONATE_SUCCESS_RETURN_LABEL" description="MOD_OSDONATE_SUCCESS_RETURN_DESC"/>
-                <field name="cancel_return" type="text" size="64" default="http://www.mysite.com/anypage2.html"
-                       label="MOD_OSDONATE_CANCEL_RETURN_LABEL" description="MOD_OSDONATE_CANCEL_RETURN_DESC"/>
-                <field name="image_url" type="text" size="64" default="http://www.mysite.com/pathto/logo"
-                       label="MOD_OSDONATE_COMPANY_LOGO_LABEL" description="MOD_OSDONATE_COMPANY_LOGO_DESC"/>
-                <field name="pp_image" type="text" size="64"
-                       default="https://www.paypal.com/en_US/i/btn/btn_donateCC_LG.gif"
-                       label="MOD_OSDONATE_PP_BUTTON_IMAGE_LABEL" description="MOD_OSDONATE_PP_BUTTON_IMAGE_DESC"/>
-
-                <field name="show_text" type="radio" default="1" label="MOD_OSDONATE_SHOW_INTRO_TEXT_LABEL"
-                       description="MOD_OSDONATE_SHOW_INTRO_TEXTDESC">
-                    <option value="1">JYES</option>
-                    <option value="0">JNO</option>
-                </field>
-                <field name="intro_text" type="textarea" rows="3" cols="35"
-                       default="Please consider supporting our efforts." label="MOD_OSDONATE_INTRO_TEXT_LABEL"
-                       description="MOD_OSDONATE_INTRO_TEXT_DESC"/>
-
-                <field name="business" type="text" size="32" default="email@website.com"
+               <field name="business" type="text" size="32" default="email@example.com"
                        label="MOD_OSDONATE_PP_CREDENTIALS_LABEL" description="MOD_OSDONATE_PP_CREDENTIALS_DESC"/>
-                <field name="item_name" type="text" size="64" default="Donate to website.com"
+                <field name="item_name" type="text" size="64" default="Donate to example.com"
                        label="MOD_OSDONATE_PP_DONATION_DESC_LABEL" description="MOD_OSDONATE_PP_DONATION_DESC_DESC"/>
                 <field name="currencies" type="text" size="64" maxlength="100"
                        default="USD,EUR,GBP,CHF,AUD,HKD,CAD,JPY,NZD,SGD,SEK,DKK,PLN,NONONOK,HUF,CZK,ILS,MXN"
@@ -67,7 +40,6 @@
                     <option value="es_ES">es_ES</option>
                     <option value="pt_BR">pt_BR</option>
                 </field>
-
                 <field name="show_amount" type="radio" default="1" label="MOD_OSDONATE_SHOW_AMOUNT_FIELD_LABEL"
                        description="MOD_OSDONATE_SHOW_AMOUNT_FIELD_DESC">
                     <option value="1">JYES</option>
@@ -75,6 +47,31 @@
                 </field>
                 <field name="amount_label" type="text" default="Amount" label="MOD_OSDONATE_AMOUNT_LABEL_LABEL" description="MOD_OSDONATE_AMOUNT_LABEL_DESC"/>
                 <field name="amount" type="text" size="5" default="" label="MOD_OSDONATE_AMOUNT_LABEL" description="MOD_OSDONATE_AMOUNT_DESC"/>
+                <field name="moduleclass_sfx" type="text" default="" label="MOD_OSDONATE_MODULE_CLASS_SUFFIX_LABEL"
+                       description="MOD_OSDONATE_MODULE_CLASS_SUFFIX_DESC"/>
+                <field name="open_new_window" type="radio" default="1" label="MOD_OSDONATE_NEW_WINDOW_LABEL"
+                       description="MOD_OSDONATE_NEW_WINDOW_DESC">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+
+                <field name="return" type="menuitem" default="45" label="MOD_OSDONATE_SUCCESS_RETURN_LABEL"
+                       description="MOD_OSDONATE_SUCCESS_RETURN_DESC"/>
+                <field name="cancel_return" type="menuitem" default="45" label="MOD_OSDONATE_CANCEL_RETURN_LABEL"
+                       description="MOD_OSDONATE_CANCEL_RETURN_DESC"/>
+                <field name="image_url" type="media" directory="/images/" label="MOD_OSDONATE_COMPANY_LOGO_LABEL"
+                       description="MOD_OSDONATE_COMPANY_LOGO_DESC"/>
+                <field name="pp_image" type="media" directory="/images/" default="https://www.paypal.com/en_US/i/btn/btn_donateCC_LG.gif"
+                       label="MOD_OSDONATE_PP_BUTTON_IMAGE_LABEL" description="MOD_OSDONATE_PP_BUTTON_IMAGE_DESC"/>
+
+                <field name="show_text" type="radio" default="1" label="MOD_OSDONATE_SHOW_INTRO_TEXT_LABEL"
+                       description="MOD_OSDONATE_SHOW_INTRO_TEXTDESC">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field name="intro_text" type="textarea" rows="3" cols="35"
+                       default="Please consider supporting our efforts." label="MOD_OSDONATE_INTRO_TEXT_LABEL"
+                       description="MOD_OSDONATE_INTRO_TEXT_DESC"/>
             </fieldset>
 
             <fieldset name="sticky_hover" label="MOD_OSDONATE_STICKY_HOVER_OPTIONS">
@@ -102,7 +99,7 @@
 
                 <field name="font_color" type="text" label="MOD_OSDONATE_FONT_COLOR_LABEL"
                        description="MOD_OSDONATE_FONT_COLOR_DESC"/>
-                       
+
                 <field name="bg_color" type="text" label="MOD_OSDONATE_BG_COLOR_LABEL"
                        description="MOD_OSDONATE_BG_COLOR_DESC"/>
 
