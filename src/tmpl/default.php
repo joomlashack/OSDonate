@@ -41,9 +41,8 @@ $amountLine = '';
 if (!$params->get('show_amount')) {
     $amountLine .= '<input type="hidden" name="amount" value="' . $params->get('amount') . '" />' . "\n";
 } else {
-    $amountLine .= JText::_(
-            'MOD_OSDONATE_AMOUNT_LABEL'
-        ) . ':<br/><input type="text" name="amount" size="4" maxlength="10" value="' . $params->get(
+    $amountLine .= $params->get('amount_label')
+        . ':<br/><input type="text" name="amount" size="4" maxlength="10" value="' . $params->get(
             'amount'
         ) . '" class="osdonate-amount" />' . "\n";
 }
