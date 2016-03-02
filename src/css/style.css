@@ -18,7 +18,20 @@
 .osdonate-sticky-hover{
     text-align:center;
     position:fixed;
+    padding:5px;
+    border-radius: 5px;
+}
+.osdonate-sticky-hover h3{
+    text-align:left;
 }
 #osdonatestatic{
     text-align:center;
+}
+.page-headr{
+    text-align:left;   
+}
+@media (max-width: 768px) {
+    .osdonate-sticky-hover{
+     position: relative;
+    }
 }

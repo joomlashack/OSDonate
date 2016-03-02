@@ -41,17 +41,16 @@ $amountLine = '';
 if (!$params->get('show_amount')) {
     $amountLine .= '<input type="hidden" name="amount" value="' . $params->get('amount') . '" />' . "\n";
 } else {
-    $amountLine .= $params->get('amount_label')
-        . ':<br/><input type="text" name="amount" size="4" maxlength="10" value="' . $params->get(
-            'amount'
-        ) . '" class="osdonate-amount" />' . "\n";
+    $amountLine .= JText::_($params->get('amount_label'))
+        . ':<br/><input type="text" name="amount" size="4" maxlength="10" value="'. $params->get('amount') . '"
+                    class="osdonate-amount" />' . "\n";
 }
 
 //need more comments when I have some time
 $currencies = explode(',', $params->get('currencies'));
 
 //need more comments when I have some time
-$availableCurrencies = Array(
+$availableCurrencies = array(
     'EUR',
     'USD',
     'GBP',
@@ -91,8 +90,8 @@ for ($i = 0; $i < $sizeOfCurr; $i++) {
 //need more comments when I have some time
 if (sizeof($currencies) == 0) {
     $amountLine = '<p class="error">' . JText::_('Error - no currencies selected!') . '<br/>' . JText::_(
-            'Please check the backend parameters!'
-        ) . '</p>';
+        'Please check the backend parameters!'
+    ) . '</p>';
     $fe_c       = '';
 } else {
     if (sizeof($currencies) == 1) {
@@ -128,6 +127,8 @@ if ($params->get('open_new_window', 1)) {
 
 $fontColor = $params->get('font_color', '#333');
 
+$bgColor = $params->get('bg_color', 'transparent');
+
 $widthOfModule = $params->get('width_of_sticky_hover');
 
 $use_sticky_hover = $params->get('use_sticky_hover');
@@ -136,13 +137,17 @@ $horizontal_distance = $params->get('horizontal_distance');
 $vertical_reference_side = $params->get('vertical_reference_side');
 $vertical_distance = $params->get('vertical_distance');
 $sticky = '';
+
 if ($use_sticky_hover == 1) {
+    $document->addScript(JURI::base() . "modules/mod_osdonate/js/stickyHoverOptions.js");
     $sticky .= "<div class=\"osdonate-sticky-hover\" style=\"color:";
     $sticky .= $fontColor . ";";
+    $sticky .= 'background-color:' . $bgColor . ';';
     $sticky .= $horizontal_reference_side . ":";
     $sticky .= $horizontal_distance . "px" . ";";
     $sticky .= $vertical_reference_side . ":";
-    $sticky .= $vertical_distance . "px;width:" . $widthOfModule . "px;z-index:1000;\" id=\"osdonatesticky\">";
+    $sticky .= $vertical_distance . "px;width:" . $widthOfModule . "px;z-index:1000;visibility:visible;\"";
+    $sticky .= " id=\"osdonatesticky\">";
 } else {
     $sticky .= "<div id=\"osdonatestatic\">";
 }
