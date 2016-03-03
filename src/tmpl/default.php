@@ -13,6 +13,8 @@
 // no direct access
 defined('_JEXEC') or die();
 
+include_once(JPATH_BASE . '/modules/mod_osdonate/inc/func.php');
+
 //load css
 $document = JFactory::getDocument();
 $document->addStyleSheet(JURI::base() . 'modules/mod_osdonate/css/style.css');
@@ -115,11 +117,6 @@ if (sizeof($currencies) == 0) {
 }
 
 $application = JFactory::getApplication();
-
-function stripDoubleSlashes($url) {
-    preg_match('/^.+?[^\/:](?=[?\/])|$/', $url, $matches);
-    return $matches[0];
-}
 
 $returnMenuListIds = array(
     $params->get('return', ''),
