@@ -65,7 +65,7 @@
                 <field name="pp_image" type="media" directory="/images/" default="https://www.paypal.com/en_US/i/btn/btn_donateCC_LG.gif"
                        label="MOD_OSDONATE_PP_BUTTON_IMAGE_LABEL" description="MOD_OSDONATE_PP_BUTTON_IMAGE_DESC"/>
 
-                <field name="show_text" type="radio" default="0" label="MOD_OSDONATE_SHOW_INTRO_TEXT_LABEL"
+                <field name="show_text" type="radio" default="1" label="MOD_OSDONATE_SHOW_INTRO_TEXT_LABEL"
                        description="MOD_OSDONATE_SHOW_INTRO_TEXTDESC">
                     <option value="1">JYES</option>
                     <option value="0">JNO</option>
@@ -76,7 +76,7 @@
             </fieldset>
 
             <fieldset name="sticky_hover" label="MOD_OSDONATE_STICKY_HOVER_OPTIONS">
-                <field name="use_sticky_hover" type="radio" default="1" label="MOD_OSDONATE_USE_STICKY_HOVER_LABEL"
+                <field name="use_sticky_hover" type="radio" default="0" label="MOD_OSDONATE_USE_STICKY_HOVER_LABEL"
                        description="MOD_OSDONATE_USE_STICKY_HOVER_DESC">
                     <option value="1">JYES</option>
                     <option value="0">JNO</option>
