@@ -7,7 +7,7 @@
     <license>GPL v3</license>
     <authorEmail>info@ostraining.com</authorEmail>
     <authorUrl>http://www.ostraining.com</authorUrl>
-    <version>1.2.1</version>
+    <version>1.2.2</version>
     <description>MOD_OSDONATE_DESCRIPTION</description>
 
 	<languages folder="language">
@@ -65,7 +65,7 @@
                 <field name="pp_image" type="media" directory="/images/" default="https://www.paypal.com/en_US/i/btn/btn_donateCC_LG.gif"
                        label="MOD_OSDONATE_PP_BUTTON_IMAGE_LABEL" description="MOD_OSDONATE_PP_BUTTON_IMAGE_DESC"/>
 
-                <field name="show_text" type="radio" default="1" label="MOD_OSDONATE_SHOW_INTRO_TEXT_LABEL"
+                <field name="show_text" type="radio" default="0" label="MOD_OSDONATE_SHOW_INTRO_TEXT_LABEL"
                        description="MOD_OSDONATE_SHOW_INTRO_TEXTDESC">
                     <option value="1">JYES</option>
                     <option value="0">JNO</option>
