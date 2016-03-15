@@ -151,7 +151,7 @@ $bgColor = $params->get('bg_color', 'transparent');
 
 $widthOfModule = $params->get('width_of_sticky_hover');
 
-$use_sticky_hover = $params->get('use_sticky_hover');
+$use_sticky_hover = $params->get('use_sticky_hover', '0');
 $horizontal_reference_side = $params->get('horizontal_reference_side');
 $horizontal_distance = $params->get('horizontal_distance');
 $vertical_reference_side = $params->get('vertical_reference_side');
