@@ -13,9 +13,9 @@
     <variant>FREE</variant>
 
 	<languages folder="language">
-    		<language tag="en-GB">en-GB/en-GB.mod_osdonate.ini</language>
+    	<language tag="en-GB">en-GB/en-GB.mod_osdonate.ini</language>
 	</languages>
-	
+
     <files>
         <filename module="mod_osdonate">mod_osdonate.php</filename>
         <folder>css</folder>
