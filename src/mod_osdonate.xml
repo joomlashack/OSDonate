@@ -2,12 +2,12 @@
 <extension type="module" version="1.6.0" client="site" method="upgrade">
     <name>MOD_OSDONATE</name>
     <author>OSTraining</author>
-    <creationDate>March 03 2016</creationDate>
+    <creationDate>May 12 2016</creationDate>
     <copyright>Copyright (C) 2011, 2013 OSTraining.com</copyright>
     <license>GPL v3</license>
     <authorEmail>info@ostraining.com</authorEmail>
     <authorUrl>http://www.ostraining.com</authorUrl>
-    <version>1.2.2</version>
+    <version>1.2.3</version>
     <description>MOD_OSDONATE_DESCRIPTION</description>
 
 	<languages folder="language">
