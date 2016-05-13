@@ -10,6 +10,8 @@
     <version>1.1.5</version>
     <description>MOD_OSDONATE_DESCRIPTION</description>
 
+    <variant>FREE</variant>
+
 	<languages folder="language">
     		<language tag="en-GB">en-GB/en-GB.mod_osdonate.ini</language>
 	</languages>
