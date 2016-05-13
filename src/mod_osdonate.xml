@@ -10,11 +10,11 @@
     <version>1.2.3</version>
     <description>MOD_OSDONATE_DESCRIPTION</description>
 
-	<languages folder="language">
-    		<language tag="en-GB">en-GB/en-GB.mod_osdonate.ini</language>
-	</languages>
     <variant>FREE</variant>
 
+    <languages folder="language">
+        <language tag="en-GB">en-GB/en-GB.mod_osdonate.ini</language>
+    </languages>
 
     <files>
         <filename module="mod_osdonate">mod_osdonate.php</filename>
@@ -27,7 +27,7 @@
     <config>
         <fields name="params">
             <fieldset name="basic">
-               <field name="business" type="text" size="32" default="email@example.com"
+                <field name="business" type="text" size="32" default="email@example.com"
                        label="MOD_OSDONATE_PP_CREDENTIALS_LABEL" description="MOD_OSDONATE_PP_CREDENTIALS_DESC"/>
                 <field name="item_name" type="text" size="64" default="Donate to example.com"
                        label="MOD_OSDONATE_PP_DONATION_DESC_LABEL" description="MOD_OSDONATE_PP_DONATION_DESC_DESC"/>
