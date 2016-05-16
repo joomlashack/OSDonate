@@ -20,6 +20,8 @@
         <filename module="mod_osdonate">mod_osdonate.php</filename>
         <folder>css</folder>
         <folder>tmpl</folder>
+        <folder>inc</folder>
+        <folder>js</folder>
     </files>
 
     <config>
