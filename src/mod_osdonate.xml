@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<extension type="module" version="1.6.0" client="site" method="upgrade">
+<extension version="3.5" type="module" client="site" method="upgrade">
     <name>MOD_OSDONATE</name>
     <author>OSTraining</author>
     <creationDate>May 12 2016</creationDate>
@@ -8,13 +8,12 @@
     <authorEmail>info@ostraining.com</authorEmail>
     <authorUrl>http://www.ostraining.com</authorUrl>
     <version>1.2.3</version>
+    <variant>FREE</variant>
     <description>MOD_OSDONATE_DESCRIPTION</description>
 
-    <variant>FREE</variant>
-
-	<languages folder="language">
-    	<language tag="en-GB">en-GB/en-GB.mod_osdonate.ini</language>
-	</languages>
+    <languages folder="language">
+        <language tag="en-GB">en-GB/en-GB.mod_osdonate.ini</language>
+    </languages>
 
     <files>
         <filename module="mod_osdonate">mod_osdonate.php</filename>
