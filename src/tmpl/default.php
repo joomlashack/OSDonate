@@ -1,13 +1,10 @@
 <?php
 /**
- * @category  Joomla Component
- * @package   mod_osdonate
- * @author    VeroPlus.com
+ * @package   OSDonate
+ * @contact   www.alledia.com, hello@alledia.com
  * @copyright 2010 VeroPlus.com
- * @copyright 2011, 2013 Open Source Training, LLC. All rights reserved
- * @contact   www.ostraining.com, support@ostraining.com
- * @license   http://www.gnu.org/copyleft/gpl.html GNU/GPL
- * @version   1.9.1
+ * @copyright 2011 - 2016 Open Source Training, LLC. All rights reserved
+ * @license   http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
  */
 
 // no direct access
@@ -126,7 +123,7 @@ $returnMenuListIds = array(
 foreach ($returnMenuListIds as $index => $itemId) {
     $menu = $application->getMenu();
     $link = $menu->getItem($itemId)->link;
-    
+
     if (JURI::isInternal($link)) {
         $linkOfMenuItems[$index] = stripDoubleSlashes(JURI::base()) . JRoute::_('index.php?Itemid=' . $itemId);
     } else {

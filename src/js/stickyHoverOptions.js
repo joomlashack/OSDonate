@@ -1,3 +1,11 @@
+/**
+ * @package   OSDonate
+ * @contact   www.alledia.com, hello@alledia.com
+ * @copyright 2010 VeroPlus.com
+ * @copyright 2011 - 2016 Open Source Training, LLC. All rights reserved
+ * @license   http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
+ */
+
 function setStickyHoverStyle(osdonate) {
     'use strict';
     //declaring selectors
