@@ -10,4 +10,6 @@
 // no direct access
 defined('_JEXEC') or die();
 
+require_once 'include.php';
+
 require JModuleHelper::getLayoutPath('mod_osdonate');

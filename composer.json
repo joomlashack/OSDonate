@@ -5,8 +5,11 @@
     "license"          : "GPL-2+",
     "type"             : "joomla.module",
     "extra"            : {
-        "element": "mod_osdonate",
-        "name":    "OSDonate"
+        "element"        : "mod_osdonate",
+        "element-short"  : "osdonate",
+        "name"           : "OSDonate",
+        "client"         : "site",
+        "package-license": "free"
     },
     "authors"          : [
         {

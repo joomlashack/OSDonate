@@ -7,14 +7,15 @@
  * @license   http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
  */
 
+use Alledia\OSDonate;
+
 // no direct access
 defined('_JEXEC') or die();
 
-include_once(JPATH_BASE . '/modules/mod_osdonate/inc/func.php');
-
 //load css
 $document = JFactory::getDocument();
-$document->addStyleSheet(JURI::base() . 'modules/mod_osdonate/css/style.css');
+$document->addStyleSheet(JURI::base() . 'media/mod_osdonate/css/style.css');
+
 //Return the selected paypal language from the module parameters
 //substr returns part of the string.
 //In this case substr starts at the first character and returns 1 more (2 total)
@@ -22,6 +23,7 @@ $document->addStyleSheet(JURI::base() . 'modules/mod_osdonate/css/style.css');
 //instead of using substr, we could have set the local values to just the lower case code.
 //e.g. "en_US" could be "US"
 $langSite = substr($params->get('locale'), 3, 2);
+
 //$langSite will never be null so if statement will always execute
 if (!$langSite) {
     $langSite = 'US';
@@ -33,7 +35,6 @@ $introtext = '';
 if ($params->get('show_text', 1)) {
     $introtext = '<p class="osdonate-introtext">' . $params->get('intro_text', '') . '</p>' . "\n";
 }
-
 
 //need more comments when I have some time
 $amountLine = '';
@@ -125,7 +126,7 @@ foreach ($returnMenuListIds as $index => $itemId) {
     $link = $menu->getItem($itemId)->link;
 
     if (JURI::isInternal($link)) {
-        $linkOfMenuItems[$index] = stripDoubleSlashes(JURI::base()) . JRoute::_('index.php?Itemid=' . $itemId);
+        $linkOfMenuItems[$index] = OSDonate\Helper::stripDoubleSlashes(JURI::base()) . JRoute::_('index.php?Itemid=' . $itemId);
     } else {
         $linkOfMenuItems[$index] = $link;
     }
@@ -156,7 +157,7 @@ $vertical_distance = $params->get('vertical_distance');
 $sticky = '';
 
 if ($use_sticky_hover == 1) {
-    $document->addScript(JURI::base() . "modules/mod_osdonate/js/stickyHoverOptions.js");
+    $document->addScript(JURI::base() . "/media/mod_osdonate/js/stickyHoverOptions.js");
     $sticky .= "<div class=\"osdonate-sticky-hover\" style=\"color:";
     $sticky .= $fontColor . ";";
     $sticky .= 'background-color:' . $bgColor . ';';
