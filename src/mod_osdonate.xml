@@ -61,7 +61,7 @@
                     name="return"
                     type="text"
                     size="64"
-                    default="http://www.mysite.com/anypage.html"
+                    default="http://www.example.com/anypage.html"
                     label="MOD_OSDONATE_SUCCESS_RETURN_LABEL"
                     description="MOD_OSDONATE_SUCCESS_RETURN_DESC"/>
 
@@ -69,7 +69,7 @@
                     name="cancel_return"
                     type="text"
                     size="64"
-                    default="http://www.mysite.com/anypage2.html"
+                    default="http://www.example.com/anypage2.html"
                     label="MOD_OSDONATE_CANCEL_RETURN_LABEL"
                     description="MOD_OSDONATE_CANCEL_RETURN_DESC"/>
 
@@ -77,7 +77,7 @@
                     name="image_url"
                     type="text"
                     size="64"
-                    default="http://www.mysite.com/pathto/logo"
+                    default="http://www.example.com/pathto/logo"
                     label="MOD_OSDONATE_COMPANY_LOGO_LABEL"
                     description="MOD_OSDONATE_COMPANY_LOGO_DESC"/>
 
@@ -113,7 +113,7 @@
                     name="business"
                     type="text"
                     size="32"
-                    default="email@website.com"
+                    default="email@example.com"
                     label="MOD_OSDONATE_PP_CREDENTIALS_LABEL"
                     description="MOD_OSDONATE_PP_CREDENTIALS_DESC"/>
 
@@ -121,7 +121,7 @@
                     name="item_name"
                     type="text"
                     size="64"
-                    default="Donate to website.com"
+                    default="Donate to example.com"
                     label="MOD_OSDONATE_PP_DONATION_DESC_LABEL"
                     description="MOD_OSDONATE_PP_DONATION_DESC_DESC"/>
 
