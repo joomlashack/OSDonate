@@ -1,5 +1,5 @@
 {
-    "name"             : "OSTraining/OSDonate",
+    "name"             : "joomlashack/osdonate",
     "description"      : "OSDonate",
     "minimum-stability": "stable",
     "license"          : "GPL-2+",
@@ -10,8 +10,8 @@
     },
     "authors"          : [
         {
-            "name" : "Open Source Training",
-            "email": "info@ostraining.com"
+            "name" : "Joomlashack",
+            "email": "help@joomlashack.com"
         }
     ],
     "require"          : {
