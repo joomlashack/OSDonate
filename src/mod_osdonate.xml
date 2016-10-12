@@ -36,7 +36,7 @@
 
     <config>
         <fields name="params"
-            addfieldpath="/administrator/components/com_osmeta/form/fields">
+            addfieldpath="/modules/mod_osdonate/form/fields">
 
             <fieldset name="basic">
                 <field
@@ -177,7 +177,7 @@
                 <field
                     type="customfooter"
                     name="customfooter"
-                    media="com_osmeta"
+                    media="mod_osdonate"
                     showgoproad="0"
                     jedurl="http://extensions.joomla.org/extension/osdonate" />
             </fieldset>
