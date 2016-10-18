@@ -170,4 +170,4 @@ if ($use_sticky_hover == 1) {
     $sticky .= "<div id=\"osdonatestatic\">";
 }
 
-require JModuleHelper::getLayoutPath('mod_osdonate');
+require JModuleHelper::getLayoutPath('mod_osdonate', 'default');
