@@ -252,7 +252,7 @@
                     type="integer"
                     default="200"
                     label="MOD_OSDONATE_WIDTH_LABEL"
-                    description="MOD_OSDONATE_WIDTH_DESCRIPTION"/>
+                    description="MOD_OSDONATE_WIDTH_DESC"/>
 
             </fieldset>
         </fields>
