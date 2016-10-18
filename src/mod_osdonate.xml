@@ -215,7 +215,7 @@
 
                 <field
                     name="horizontal_distance"
-                    type="integer"
+                    type="number"
                     default="0"
                     label="MOD_OSDONATE_HORIZONTAL_DISTANCE_LABEL"
                     description="MOD_OSDONATE_HORIZONTAL_DISTANCE_DESC"/>
@@ -234,23 +234,22 @@
 
                 <field
                     name="vertical_distance"
-                    type="integer"
+                    type="number"
                     default="0"
                     label="MOD_OSDONATE_VERTICAL_DISTANCE_LABEL"
                     description="MOD_OSDONATE_VERTICAL_DISTANCE_DESC"/>
 
                 <field
                     name="font_color"
-                    type="text"
-                    size="16"
-                    default=""
+                    type="color"
+                    default="#333333"
                     label="MOD_OSDONATE_FONT_COLOR_LABEL"
                     description="MOD_OSDONATE_FONT_COLOR_DESC"/>
 
                 <field
                     name="width_of_sticky_hover"
-                    type="integer"
-                    default="200"
+                    type="number"
+                    default="0"
                     label="MOD_OSDONATE_WIDTH_LABEL"
                     description="MOD_OSDONATE_WIDTH_DESC"/>
 
