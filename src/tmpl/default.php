@@ -11,6 +11,9 @@ use Alledia\OSDonate;
 
 // no direct access
 defined('_JEXEC') or die();
+
+echo $sticky;
+echo $introtext;
 ?>
 
 <form class="osdonate-form" action="https://www.paypal.com/cgi-bin/webscr"

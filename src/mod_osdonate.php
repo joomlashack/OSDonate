@@ -147,7 +147,7 @@ $fontColor = $params->get('font_color', '#333');
 
 $bgColor = $params->get('bg_color', 'transparent');
 
-$widthOfModule = $params->get('width_of_sticky_hover');
+$widthOfModule = $params->get('width_of_sticky_hover', 200);
 
 $use_sticky_hover = $params->get('use_sticky_hover', '0');
 $horizontal_reference_side = $params->get('horizontal_reference_side');
@@ -169,8 +169,5 @@ if ($use_sticky_hover == 1) {
 } else {
     $sticky .= "<div id=\"osdonatestatic\">";
 }
-
-echo $sticky;
-echo $introtext;
 
 require JModuleHelper::getLayoutPath('mod_osdonate');
