@@ -240,13 +240,6 @@
                     description="MOD_OSDONATE_VERTICAL_DISTANCE_DESC"/>
 
                 <field
-                    name="font_color"
-                    type="color"
-                    default="#333"
-                    label="MOD_OSDONATE_FONT_COLOR_LABEL"
-                    description="MOD_OSDONATE_FONT_COLOR_DESC"/>
-
-                <field
                     name="width_of_sticky_hover"
                     type="number"
                     default="200"

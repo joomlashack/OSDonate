@@ -24,6 +24,11 @@
     text-align:center;
     position:fixed;
 }
+#osdonatesticky {
+    background: #fff;
+    color: #333;
+    padding: 20px;
+}
 #osdonatestatic{
     text-align:center;
 }
