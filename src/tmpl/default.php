@@ -27,7 +27,7 @@ echo $introtext;
     <input type="hidden" name="no_shipping" value="1"/>
     <input type="hidden" name="image_url" value="<?php echo JURI::base() . $params->get('image_url', ''); ?>"/>
     <input type="hidden" name="cancel_return" value="<?php echo $linkOfMenuItems[1]; ?>"/>
-    <input type="hidden" name="no_note" value="0"/><br/><br/>
+    <input type="hidden" name="no_note" value="0"/>
     <input type="image" src="<?php echo $params->get('pp_image', ''); ?>" name="submit" alt="PayPal secure payments."/>
     <input type="hidden" name="lc" value="<?php echo $langSite; ?>">
 </form>
