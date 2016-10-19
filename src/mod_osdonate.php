@@ -104,11 +104,11 @@ if (sizeof($currencies) == 0) {
     } else {
         if (sizeof($currencies) > 1) {
             if ($params->get('show_amount', 1)) {
-                $fe_c = '<select name="currency_code">' . "\n";
+                $fe_c = '<div class="currency-code-wrapper"><select name="currency_code">' . "\n";
                 foreach ($currencies as $row) {
                     $fe_c .= '<option value="' . $row . '">' . $row . '</option>' . "\n";
                 }
-                $fe_c .= '</select>' . "\n";
+                $fe_c .= '</select></div>' . "\n";
             } else {
                 $fe_c = '<input type="hidden" name="currency_code" value="' . $currencies[0] . '" />' . "\n";
             }
