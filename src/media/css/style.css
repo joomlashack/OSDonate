@@ -6,8 +6,9 @@
  * @license   http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
  */
 
-.osdonate-form{
-
+.osdonate-form input[type="text"],
+.osdonate-form select {
+    margin-bottom: 15px;
 }
 .osdonate-form input[type="text"]{
 	width:auto;
@@ -26,6 +27,11 @@
 .osdonate-sticky-hover{
     text-align:center;
     position:fixed;
+}
+#osdonatesticky {
+    background: #fff;
+    color: #333;
+    padding: 20px;
 }
 #osdonatestatic{
     text-align:center;

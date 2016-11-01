@@ -51,7 +51,8 @@
                     type="radio"
                     default="1"
                     label="MOD_OSDONATE_NEW_WINDOW_LABEL"
-                    description="MOD_OSDONATE_NEW_WINDOW_DESC">
+                    description="MOD_OSDONATE_NEW_WINDOW_DESC"
+                    class="btn-group btn-group-yesno">
 
                     <option value="1">JYES</option>
                     <option value="0">JNO</option>
@@ -94,7 +95,8 @@
                     type="radio"
                     default="1"
                     label="MOD_OSDONATE_SHOW_INTRO_TEXT_LABEL"
-                    description="MOD_OSDONATE_SHOW_INTRO_TEXTDESC">
+                    description="MOD_OSDONATE_SHOW_INTRO_TEXTDESC"
+                    class="btn-group btn-group-yesno">
 
                     <option value="1">JYES</option>
                     <option value="0">JNO</option>
@@ -153,7 +155,8 @@
                     type="radio"
                     default="1"
                     label="MOD_OSDONATE_SHOW_AMOUNT_FIELD_LABEL"
-                    description="MOD_OSDONATE_SHOW_AMOUNT_FIELD_DESC">
+                    description="MOD_OSDONATE_SHOW_AMOUNT_FIELD_DESC"
+                    class="btn-group btn-group-yesno">
 
                     <option value="1">JYES</option>
                     <option value="0">JNO</option>
@@ -191,7 +194,8 @@
                     type="radio"
                     default="0"
                     label="MOD_OSDONATE_STICKY_HOVER_OPTIONS_LABEL"
-                    description="MOD_OSDONATE_STICKY_HOVER_OPTIONS_DESC">
+                    description="MOD_OSDONATE_STICKY_HOVER_OPTIONS_DESC"
+                    class="btn-group btn-group-yesno">
 
                     <option value="1">JYES</option>
                     <option value="0">JNO</option>
@@ -202,7 +206,8 @@
                     type="radio"
                     default="right"
                     label="MOD_OSDONATE_HORIZONTAL_REFERENCE_SIDE_LABEL"
-                    description="MOD_OSDONATE_HORIZONTAL_REFERENCE_SIDE_DESC">
+                    description="MOD_OSDONATE_HORIZONTAL_REFERENCE_SIDE_DESC"
+                    class="btn-group">
 
                     <option value="right">MOD_OSDONATE_RIGHT</option>
                     <option value="left">MOD_OSDONATE_LEFT</option>
@@ -210,8 +215,7 @@
 
                 <field
                     name="horizontal_distance"
-                    type="text"
-                    size="5"
+                    type="number"
                     default="0"
                     label="MOD_OSDONATE_HORIZONTAL_DISTANCE_LABEL"
                     description="MOD_OSDONATE_HORIZONTAL_DISTANCE_DESC"/>
@@ -221,7 +225,8 @@
                     type="radio"
                     default="bottom"
                     label="MOD_OSDONATE_VERTICAL_REFERENCE_SIDE_LABEL"
-                    description="MOD_OSDONATE_VERTICAL_REFERENCE_SIDE_DESC">
+                    description="MOD_OSDONATE_VERTICAL_REFERENCE_SIDE_DESC"
+                    class="btn-group">
 
                     <option value="bottom">MOD_OSDONATE_BOTTOM</option>
                     <option value="top">MOD_OSDONATE_TOP</option>
@@ -229,29 +234,20 @@
 
                 <field
                     name="vertical_distance"
-                    type="text"
-                    size="5"
+                    type="number"
                     default="0"
                     label="MOD_OSDONATE_VERTICAL_DISTANCE_LABEL"
                     description="MOD_OSDONATE_VERTICAL_DISTANCE_DESC"/>
 
                 <field
-                    name="font_color"
-                    type="text"
-                    size="16"
-                    default=""
-                    label="MOD_OSDONATE_FONT_COLOR_LABEL"
-                    description="MOD_OSDONATE_FONT_COLOR_DESC"/>
-
-                <field
                     name="width_of_sticky_hover"
-                    type="text"
-                    size="5"
+                    type="number"
                     default="200"
                     label="MOD_OSDONATE_WIDTH_LABEL"
-                    description="MOD_OSDONATE_WIDTH_DESCRIPTION"/>
+                    description="MOD_OSDONATE_WIDTH_DESC"/>
 
             </fieldset>
+
         </fields>
     </config>
 
