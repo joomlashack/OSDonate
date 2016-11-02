@@ -252,7 +252,7 @@
     </config>
 
     <updateservers>
-        <server type="extension" priority="1" name="OSDonate"><![CDATA[https://deploy.ostraining.com/client/update/free/stable/mod_osdonate]]></server>
+        <server type="extension" priority="1" name="OSDonate Free"><![CDATA[https://deploy.ostraining.com/client/update/free/stable/mod_osdonate]]></server>
     </updateservers>
 
     <alledia>
