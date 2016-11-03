@@ -124,8 +124,15 @@ $returnMenuListIds = array(
 );
 
 foreach ($returnMenuListIds as $index => $itemId) {
-    $menu = $application->getMenu();
-    $link = $menu->getItem($itemId)->link;
+    // Check if the $itemId is a number or not (legacy params)
+    if (is_numeric($itemId)) {
+        // A menu item
+        $menu = $application->getMenu();
+        $link = $menu->getItem($itemId)->link;
+    } else {
+        // String, probably a relative or external URL
+        $link = $itemId;
+    }
 
     if (JURI::isInternal($link)) {
         $linkOfMenuItems[$index] = Helper::stripDoubleSlashes(JURI::base()) . JRoute::_('index.php?Itemid=' . $itemId);
