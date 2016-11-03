@@ -19,7 +19,7 @@ class Helper
      * @param string $url
      * @return string
      */
-    public function stripDoubleSlashes($url)
+    public static function stripDoubleSlashes($url)
     {
         preg_match('/^.+?[^\/:](?=[?\/])|$/', $url, $matches);
 

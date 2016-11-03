@@ -7,7 +7,7 @@
  * @license   http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
  */
 
-use Alledia\OSDonate;
+use Alledia\OSDonate\Free\Helper;
 
 // no direct access
 defined('_JEXEC') or die();
@@ -128,7 +128,7 @@ foreach ($returnMenuListIds as $index => $itemId) {
     $link = $menu->getItem($itemId)->link;
 
     if (JURI::isInternal($link)) {
-        $linkOfMenuItems[$index] = OSDonate\Helper::stripDoubleSlashes(JURI::base()) . JRoute::_('index.php?Itemid=' . $itemId);
+        $linkOfMenuItems[$index] = Helper::stripDoubleSlashes(JURI::base()) . JRoute::_('index.php?Itemid=' . $itemId);
     } else {
         $linkOfMenuItems[$index] = $link;
     }
@@ -166,4 +166,4 @@ if ($use_sticky_hover == 1) {
     $sticky .= "<div id=\"osdonatestatic\">";
 }
 
-require JModuleHelper::getLayoutPath('mod_osdonate', 'default');
+require JModuleHelper::getLayoutPath('mod_osdonate', $params->get('layout', 'default'));
