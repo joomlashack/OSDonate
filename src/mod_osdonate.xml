@@ -40,13 +40,6 @@
 
             <fieldset name="basic">
                 <field
-                    name="moduleclass_sfx"
-                    type="text"
-                    default=""
-                    label="MOD_OSDONATE_MODULE_CLASS_SUFFIX_LABEL"
-                    description="MOD_OSDONATE_MODULE_CLASS_SUFFIX_DESC"/>
-
-                <field
                     name="open_new_window"
                     type="radio"
                     default="1"
@@ -60,64 +53,53 @@
 
                 <field
                     name="return"
-                    type="text"
-                    size="64"
-                    default="http://www.example.com/anypage.html"
+                    type="menuitem"
                     label="MOD_OSDONATE_SUCCESS_RETURN_LABEL"
                     description="MOD_OSDONATE_SUCCESS_RETURN_DESC"/>
 
                 <field
                     name="cancel_return"
-                    type="text"
-                    size="64"
-                    default="http://www.example.com/anypage2.html"
+                    type="menuitem"
                     label="MOD_OSDONATE_CANCEL_RETURN_LABEL"
                     description="MOD_OSDONATE_CANCEL_RETURN_DESC"/>
 
+                <field type="subtitle" label="MOD_OSDONATE_PAYPAL" />
+
+                <field
+                    name="business"
+                    type="email"
+                    size="32"
+                    default="email@example.com"
+                    label="MOD_OSDONATE_PP_CREDENTIALS_LABEL"
+                    description="MOD_OSDONATE_PP_CREDENTIALS_DESC"/>
+
                 <field
                     name="image_url"
-                    type="text"
-                    size="64"
-                    default="http://www.example.com/pathto/logo"
+                    type="media"
                     label="MOD_OSDONATE_COMPANY_LOGO_LABEL"
                     description="MOD_OSDONATE_COMPANY_LOGO_DESC"/>
 
                 <field
                     name="pp_image"
-                    type="text"
+                    type="url"
                     size="64"
                     default="https://www.paypal.com/en_US/i/btn/btn_donateCC_LG.gif"
                     label="MOD_OSDONATE_PP_BUTTON_IMAGE_LABEL"
                     description="MOD_OSDONATE_PP_BUTTON_IMAGE_DESC"/>
 
                 <field
-                    name="show_text"
-                    type="radio"
-                    default="1"
-                    label="MOD_OSDONATE_SHOW_INTRO_TEXT_LABEL"
-                    description="MOD_OSDONATE_SHOW_INTRO_TEXTDESC"
-                    class="btn-group btn-group-yesno">
+                    name="locale"
+                    type="list"
+                    default="en_US"
+                    label="MOD_OSDONATE_PP_LANGUAGE_LABEL"
+                    description="MOD_OSDONATE_PP_LANGUAGE_DESC">
 
-                    <option value="1">JYES</option>
-                    <option value="0">JNO</option>
+                    <option value="en_US">en_US</option>
+                    <option value="it_IT">it_IT</option>
+                    <option value="de_DE">de_DE</option>
+                    <option value="fr_FR">fr_FR</option>
+                    <option value="es_ES">es_ES</option>
                 </field>
-
-                <field
-                    name="intro_text"
-                    type="textarea"
-                    rows="3"
-                    cols="35"
-                    default="Please consider supporting our efforts."
-                    label="MOD_OSDONATE_INTRO_TEXT_LABEL"
-                    description="MOD_OSDONATE_INTRO_TEXT_DESC"/>
-
-                <field
-                    name="business"
-                    type="text"
-                    size="32"
-                    default="email@example.com"
-                    label="MOD_OSDONATE_PP_CREDENTIALS_LABEL"
-                    description="MOD_OSDONATE_PP_CREDENTIALS_DESC"/>
 
                 <field
                     name="item_name"
@@ -136,18 +118,18 @@
                     label="MOD_OSDONATE_CURRENCIES_LABEL"
                     description="MOD_OSDONATE_CURRENCIES_DESC"/>
 
-                <field
-                    name="locale"
-                    type="list"
-                    default="en_US"
-                    label="MOD_OSDONATE_PP_LANGUAGE_LABEL"
-                    description="MOD_OSDONATE_PP_LANGUAGE_DESC">
+                <field type="subtitle" label="MOD_OSDONATE_LAYOUT" />
 
-                    <option value="en_US">en_US</option>
-                    <option value="it_IT">it_IT</option>
-                    <option value="de_DE">de_DE</option>
-                    <option value="fr_FR">fr_FR</option>
-                    <option value="es_ES">es_ES</option>
+                <field
+                    name="show_text"
+                    type="radio"
+                    default="1"
+                    label="MOD_OSDONATE_SHOW_INTRO_TEXT_LABEL"
+                    description="MOD_OSDONATE_SHOW_INTRO_TEXTDESC"
+                    class="btn-group btn-group-yesno">
+
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
                 </field>
 
                 <field
@@ -161,6 +143,24 @@
                     <option value="1">JYES</option>
                     <option value="0">JNO</option>
                 </field>
+
+                <field
+                    name="layout"
+                    type="modulelayout"
+                    label="MOD_OSDONATE_LAYOUT_LABEL"
+                    default="default"
+                    description="MOD_OSDONATE_LAYOUT_DESC" />
+
+                <field type="subtitle" label="MOD_OSDONATE_CUSTOM_TEXT" />
+
+                <field
+                    name="intro_text"
+                    type="textarea"
+                    rows="3"
+                    cols="35"
+                    default="Please consider supporting our efforts."
+                    label="MOD_OSDONATE_INTRO_TEXT_LABEL"
+                    description="MOD_OSDONATE_INTRO_TEXT_DESC"/>
 
                 <field
                     name="amount_label"
@@ -246,6 +246,16 @@
                     label="MOD_OSDONATE_WIDTH_LABEL"
                     description="MOD_OSDONATE_WIDTH_DESC"/>
 
+            </fieldset>
+
+            <fieldset name="advanced">
+                <field
+                    name="moduleclass_sfx"
+                    type="textarea"
+                    default=""
+                    rows="3"
+                    label="MOD_OSDONATE_MODULE_CLASS_SUFFIX_LABEL"
+                    description="MOD_OSDONATE_MODULE_CLASS_SUFFIX_DESC"/>
             </fieldset>
 
         </fields>
