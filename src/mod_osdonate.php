@@ -76,17 +76,17 @@ $availableCurrencies = array(
 
 //need more comments when I have some time
 $sizeOfCurr = sizeof($currencies);
+$isOk = false;
 for ($i = 0; $i < $sizeOfCurr; $i++) {
     for ($j = 0; $j < sizeof($availableCurrencies); $j++) {
         if ($currencies[$i] === $availableCurrencies[$j]) {
-            $isOk = 1;
+            $isOk = true;
             break;
         }
     }
     if (!$isOk) {
         unset($currencies[$i]);
     }
-    $isOk = 0;
 }
 
 //need more comments when I have some time
