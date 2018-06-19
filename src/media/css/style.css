@@ -17,6 +17,9 @@
 #osdonate-form select{
 	width: 75px;
 	min-width: 75px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
 }
 .osdonate-introtext{
     text-align: left;
