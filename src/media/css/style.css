@@ -9,17 +9,14 @@
 #osdonate-form input[type="text"],
 #osdonate-form select {
     margin: 0 0 15px;
-    box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
 }
 #osdonate-form input[type="text"]{
-	width: 45px;
-	min-width: 45px;
-}
-#osdonate-form select{
 	width: 50px;
 	min-width: 50px;
+}
+#osdonate-form select{
+	width: 75px;
+	min-width: 75px;
 }
 .osdonate-introtext{
     text-align: left;
