@@ -14,7 +14,7 @@ echo $sticky;
 echo $introtext;
 ?>
 
-<form class="osdonate-form" action="https://www.paypal.com/cgi-bin/webscr"
+<form class="osdonate-form" id="osdonate-form" action="https://www.paypal.com/cgi-bin/webscr"
       method="post" <?php echo $target; ?>>
     <input type="hidden" name="cmd" value="_donations"/>
     <input type="hidden" name="business" value="<?php echo $params->get('business', ''); ?>"/>
