@@ -173,4 +173,9 @@ if ($use_sticky_hover == 1) {
     $sticky .= "<div id=\"osdonatestatic\">";
 }
 
+// Check if site uses https
+if (!strstr(JURI::base(), 'https')) {
+	echo '<div class="osdonate-warning">' . JText::_('MOD_OSDONATE_HTTPS_WARNING') . '</div>';
+}
+
 require JModuleHelper::getLayoutPath('mod_osdonate', $params->get('layout', 'default'));
