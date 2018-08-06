@@ -2,12 +2,12 @@
 <extension version="3.5" type="module" client="site" method="upgrade">
     <name>MOD_OSDONATE</name>
     <author>Joomlashack</author>
-    <creationDate>May 11 2017</creationDate>
+    <creationDate>June 25 2018</creationDate>
     <copyright>Copyright (C) 2016 Open Source Training, LLC, All rights reserved</copyright>
     <license>GPL v3</license>
     <authorEmail>help@joomlashack.com</authorEmail>
     <authorUrl>http://www.joomlashack.com</authorUrl>
-    <version>1.4.2b1</version>
+    <version>1.4.3b1</version>
     <variant>FREE</variant>
     <description>MOD_OSDONATE_DESCRIPTION</description>
 
@@ -181,8 +181,8 @@
                     type="customfooter"
                     name="customfooter"
                     media="mod_osdonate"
-                    showgoproad="0"
-                    jedurl="http://extensions.joomla.org/extension/osdonate" />
+                    showgoproad="https://www.joomlashack.com/joomla-extensions/osdonate/"
+                    jedurl="https://extensions.joomla.org/extension/osdonate/" />
             </fieldset>
 
             <fieldset
