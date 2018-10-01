@@ -244,16 +244,14 @@
         <license>free</license>
         <targetplatform>3.*</targetplatform>
         <relatedExtensions>
-            <extension
-                type="library"
-                element="allediaframework">AllediaFramework</extension>
+            <extension type="library"
+                       element="allediaframework">AllediaFramework</extension>
 
-            <extension
-                type="plugin"
-                group="system"
-                element="ossystem"
-                publish="true"
-                ordering="first">OSSystem</extension>
+            <extension type="plugin"
+                       group="system"
+                       element="ossystem"
+                       publish="true"
+                       ordering="first">OSSystem</extension>
         </relatedExtensions>
 
         <include>AllediaFreeDefaultFiles</include>
