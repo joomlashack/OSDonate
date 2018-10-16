@@ -39,6 +39,12 @@
 #osdonatestatic{
     text-align:center;
 }
+.osdonate-warning {
+    padding: 20px;
+    color: #856404;
+    background: #fff3cd;
+    margin-bottom: 10px;
+}
 @media (max-width: 768px) {
     .osdonate-sticky-hover{
         position: relative;
