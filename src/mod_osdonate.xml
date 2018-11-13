@@ -187,7 +187,8 @@
                        default="right"
                        label="MOD_OSDONATE_HORIZONTAL_REFERENCE_SIDE_LABEL"
                        description="MOD_OSDONATE_HORIZONTAL_REFERENCE_SIDE_DESC"
-                       class="btn-group">
+                       class="btn-group"
+                       showon="use_sticky_hover:1">
 
                     <option value="right">MOD_OSDONATE_RIGHT</option>
                     <option value="left">MOD_OSDONATE_LEFT</option>
@@ -197,14 +198,16 @@
                        type="number"
                        default="0"
                        label="MOD_OSDONATE_HORIZONTAL_DISTANCE_LABEL"
-                       description="MOD_OSDONATE_HORIZONTAL_DISTANCE_DESC"/>
+                       description="MOD_OSDONATE_HORIZONTAL_DISTANCE_DESC"
+                       showon="use_sticky_hover:1"/>
 
                 <field name="vertical_reference_side"
                        type="radio"
                        default="bottom"
                        label="MOD_OSDONATE_VERTICAL_REFERENCE_SIDE_LABEL"
                        description="MOD_OSDONATE_VERTICAL_REFERENCE_SIDE_DESC"
-                       class="btn-group">
+                       class="btn-group"
+                       showon="use_sticky_hover:1">
                     <option value="bottom">MOD_OSDONATE_BOTTOM</option>
                     <option value="top">MOD_OSDONATE_TOP</option>
                 </field>
@@ -213,13 +216,15 @@
                        type="number"
                        default="0"
                        label="MOD_OSDONATE_VERTICAL_DISTANCE_LABEL"
-                       description="MOD_OSDONATE_VERTICAL_DISTANCE_DESC"/>
+                       description="MOD_OSDONATE_VERTICAL_DISTANCE_DESC"
+                       showon="use_sticky_hover:1"/>
 
                 <field name="width_of_sticky_hover"
                        type="number"
                        default="200"
                        label="MOD_OSDONATE_WIDTH_LABEL"
-                       description="MOD_OSDONATE_WIDTH_DESC"/>
+                       description="MOD_OSDONATE_WIDTH_DESC"
+                       showon="use_sticky_hover:1"/>
             </fieldset>
 
             <fieldset name="advanced">
