@@ -23,6 +23,7 @@
  */
 
 use Alledia\OSDonate\Free\Helper;
+use Joomla\Utilities\ArrayHelper;
 
 // no direct access
 defined('_JEXEC') or die();
@@ -31,42 +32,50 @@ require_once 'include.php';
 
 //load css
 $document = JFactory::getDocument();
-$document->addStyleSheet(JURI::base() . 'media/mod_osdonate/css/style.css');
+JHtml::_('stylesheet', 'mod_osdonate/style.css', array('relative' => true));
 
-//Return the selected paypal language from the module parameters
-//substr returns part of the string.
-//In this case substr starts at the first character and returns 1 more (2 total)
-//e.g. substr(en_US, 3, 2); //will return "US"
-//instead of using substr, we could have set the local values to just the lower case code.
-//e.g. "en_US" could be "US"
-$langSite = substr($params->get('locale'), 3, 2);
+/*
+ * Return the selected paypal language from the module parameters
+ * substr returns part of the string.
+ * In this case substr starts at the first character and returns 1 more (2 total)
+ * e.g. substr(en_US, 3, 2); //will return "US"
+ * instead of using substr, we could have set the local values to just the lower case code.
+ * e.g. "en_US" could be "US"
+ */
+$langSite = substr($params->get('locale'), 3, 2) ?: 'US';
 
-//$langSite will never be null so if statement will always execute
-if (!$langSite) {
-    $langSite = 'US';
-}
+$introtext = $params->get('show_text', 1) && $params->get('intro_text')
+    ? sprintf('<p class="osdonate-introtext">%s</p>' . "\n", $params->get('intro_text', ''))
+    : '';
 
-//get intro text if there is any
-//need more comments when I have some time
-$introtext = '';
-if ($params->get('show_text', 1)) {
-    $introtext = '<p class="osdonate-introtext">' . $params->get('intro_text', '') . '</p>' . "\n";
-}
-
-//need more comments when I have some time
-$amountLine = '';
+$amountAttribs = array(
+    'type'  => 'hidden',
+    'name'  => 'amount',
+    'value' => $params->get('amount')
+);
 if (!$params->get('show_amount')) {
-    $amountLine .= '<input type="hidden" name="amount" value="' . $params->get('amount') . '" />' . "\n";
+    $amountLine = sprintf("<input %s/>\n", ArrayHelper::toString($amountAttribs));
+
 } else {
-    $amountLine .= JText::_($params->get('amount_label'))
-        . ':<br/><input type="text" name="amount" size="4" maxlength="10" value="'. $params->get('amount') . '"
-                    class="osdonate-amount" />' . "\n";
+    $amountAttribs = array_replace(
+        $amountAttribs,
+        array(
+            'type'      => 'text',
+            'size'      => 4,
+            'maxlength' => 10,
+            'class='    => 'osdonate-amount'
+        )
+    );
+
+    $amountLine = sprintf(
+        "%s<br><input %s/>\n",
+        JText::_($params->get('amount_label')),
+        ArrayHelper::toString($amountAttribs)
+    );
 }
 
-//need more comments when I have some time
-$currencies = explode(',', $params->get('currencies'));
+$currencies = array_map('trim', array_filter(explode(',', $params->get('currencies'))));
 
-//need more comments when I have some time
 $availableCurrencies = array(
     'EUR',
     'USD',
@@ -89,49 +98,42 @@ $availableCurrencies = array(
     'MXN'
 );
 
-//need more comments when I have some time
-$sizeOfCurr = sizeof($currencies);
-$isOk = false;
-for ($i = 0; $i < $sizeOfCurr; $i++) {
-    for ($j = 0; $j < sizeof($availableCurrencies); $j++) {
-        if ($currencies[$i] === $availableCurrencies[$j]) {
-            $isOk = true;
-            break;
-        }
-    }
-    if (!$isOk) {
-        unset($currencies[$i]);
-    }
-}
+// Filter out any invalid currencies
+$currencies = array_values(array_intersect($currencies, $availableCurrencies));
 
-//need more comments when I have some time
-if (sizeof($currencies) == 0) {
-    $amountLine = '<p class="error">' . JText::_('Error - no currencies selected!') . '<br/>' . JText::_(
-            'Please check the backend parameters!'
-        ) . '</p>';
-    $fe_c       = '';
-} else {
-    if (sizeof($currencies) == 1) {
-        $fe_c = '<input type="hidden" name="currency_code" value="' . $currencies[0] . '" />' . "\n";
-        if ($params->get('show_amount', 1)) {
-            $fe_c .= '&nbsp;' . $currencies[0] . "\n";
-        }
+
+$currencyCount = count($currencies);
+if ($currencyCount === 0) {
+    $amountLine = sprintf(
+        '<p class="error">%s<br/>%s</p>',
+        'Error - no currencies selected!',
+        'Please check the backend parameters!'
+    );
+
+    $fe_c = '';
+
+} elseif ($currencyCount === 1) {
+    $fe_c = sprintf(
+        '<input type="hidden" name="currency_code" value="%s"/>%s' . "\n",
+        $currencies[0],
+        $params->get('show_amount', 1) ? ('&nbsp;' . $currencies[0]) : ''
+    );
+
+} elseif ($currencyCount > 1) {
+    if ($params->get('show_amount', 1)) {
+        $currencyOptions = array_map(
+            function ($row) {
+                return JHtml::_('select.option', $row);
+            },
+            $currencies
+        );
+
+        $fe_c = JHtml::_('select.genericlist', $currencyOptions, 'currency_code') . "\n";
+
     } else {
-        if (sizeof($currencies) > 1) {
-            if ($params->get('show_amount', 1)) {
-                $fe_c = '<select name="currency_code">' . "\n";
-                foreach ($currencies as $row) {
-                    $fe_c .= '<option value="' . $row . '">' . $row . '</option>' . "\n";
-                }
-                $fe_c .= '</select>' . "\n";
-            } else {
-                $fe_c = '<input type="hidden" name="currency_code" value="' . $currencies[0] . '" />' . "\n";
-            }
-        }
+        $fe_c = '<input type="hidden" name="currency_code" value="' . $currencies[0] . '" />' . "\n";
     }
 }
-
-$application = JFactory::getApplication();
 
 $returnMenuListIds = array(
     $params->get('return', ''),
@@ -142,50 +144,51 @@ foreach ($returnMenuListIds as $index => $itemId) {
     // Check if the $itemId is a number or not (legacy params)
     if (is_numeric($itemId)) {
         // A menu item
-        $menu = $application->getMenu();
+        $menu = $app->getMenu();
         $link = $menu->getItem($itemId)->link;
     } else {
         // String, probably a relative or external URL
         $link = $itemId;
     }
 
-    if (JURI::isInternal($link)) {
-        $linkOfMenuItems[$index] = Helper::stripDoubleSlashes(JURI::base()) . JRoute::_('index.php?Itemid=' . $itemId);
+    if (JUri::isInternal($link)) {
+        $linkOfMenuItems[$index] = Helper::stripDoubleSlashes(JUri::base()) . JRoute::_('index.php?Itemid=' . $itemId);
+
     } else {
         $linkOfMenuItems[$index] = $link;
     }
 }
 
-//need more comments when I have some time
-$target = '';
-if ($params->get('open_new_window', 1)) {
-    $target = 'target="paypal"';
-}
+$target = $params->get('open_new_window', 1) ? 'target="paypal"' : '';
 
-$target = '';
-if ($params->get('open_new_window', 1)) {
-    $target = 'target="paypal"';
-}
-
-$widthOfModule = $params->get('width_of_sticky_hover', 200);
-
-$use_sticky_hover = $params->get('use_sticky_hover', '0');
+$widthOfModule             = $params->get('width_of_sticky_hover', 200);
+$use_sticky_hover          = $params->get('use_sticky_hover', '0');
 $horizontal_reference_side = $params->get('horizontal_reference_side');
-$horizontal_distance = $params->get('horizontal_distance');
-$vertical_reference_side = $params->get('vertical_reference_side');
-$vertical_distance = $params->get('vertical_distance');
-$sticky = '';
+$horizontal_distance       = $params->get('horizontal_distance');
+$vertical_reference_side   = $params->get('vertical_reference_side');
+$vertical_distance         = $params->get('vertical_distance');
+$sticky                    = '';
 
 if ($use_sticky_hover == 1) {
-    $document->addScript(JURI::base() . "/media/mod_osdonate/js/stickyHoverOptions.js");
-    $sticky .= "<div class=\"osdonate-sticky-hover\" style=\"";
-    $sticky .= $horizontal_reference_side . ":";
-    $sticky .= $horizontal_distance . "px" . ";";
-    $sticky .= $vertical_reference_side . ":";
-    $sticky .= $vertical_distance . "px;width:" . $widthOfModule . "px;z-index:1000;visibility:visible;\"";
-    $sticky .= " id=\"osdonatesticky\">";
+    JHtml::_('script', 'mod_osdonate/stickyHoverOptions.js', array('relative' => true));
+
+    $stickyStyles  = array(
+        $horizontal_reference_side . ':' . $horizontal_distance . 'px',
+        $vertical_reference_side . ':' . $vertical_distance . 'px',
+        'width:' . $widthOfModule . 'px',
+        'z-index:1000',
+        'visibility:visible'
+    );
+    $stickyAttribs = array(
+        'id'    => 'osdonatesticky',
+        'class' => 'osdonate-sticky-hover',
+        'style' => join(';', $stickyStyles)
+    );
+
+    $sticky = sprintf('<div  %s>', ArrayHelper::toString($stickyAttribs));
+
 } else {
-    $sticky .= "<div id=\"osdonatestatic\">";
+    $sticky .= '<div id="osdonatestatic">';
 }
 
 require JModuleHelper::getLayoutPath('mod_osdonate', $params->get('layout', 'default'));
