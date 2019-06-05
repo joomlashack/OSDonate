@@ -104,7 +104,7 @@
                        type="text"
                        size="64"
                        maxlength="100"
-                       default="USD,EUR,GBP,CHF,AUD,HKD,CAD,JPY,NZD,SGD,SEK,DKK,PLN,NONONOK,HUF,CZK,ILS,MXN"
+                       default="USD,EUR,GBP,CHF,AUD,HKD,CAD,JPY,NZD,SGD,SEK,DKK,PLN,NOK,HUF,CZK,ILS,MXN"
                        label="MOD_OSDONATE_CURRENCIES_LABEL"
                        description="MOD_OSDONATE_CURRENCIES_DESC"/>
 
