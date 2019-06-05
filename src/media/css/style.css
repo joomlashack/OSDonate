@@ -29,6 +29,12 @@
 	width: 50px;
 	min-width: 50px;
 }
+
+#osdonate-form input[type="image"] {
+  width: 100%;
+  height: auto;
+}
+
 #osdonate-form select{
 	width: 75px;
 	min-width: 75px;
