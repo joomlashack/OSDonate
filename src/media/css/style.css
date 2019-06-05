@@ -26,18 +26,19 @@
     margin: 0 0 15px;
 }
 #osdonate-form input[type="text"]{
-	width: 50px;
-	min-width: 50px;
+    width: 50px;
+    min-width: 50px;
 }
 
 #osdonate-form input[type="image"] {
-  width: 100%;
-  height: auto;
+    width: auto;
+    height: auto;
+    max-width: 100%;
 }
 
 #osdonate-form select{
-	width: 75px;
-	min-width: 75px;
+    width: 75px;
+    min-width: 75px;
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
