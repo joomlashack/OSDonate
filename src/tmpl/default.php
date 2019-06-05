@@ -22,8 +22,52 @@
  * along with OSDonate.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-// no direct access
+use Joomla\CMS\Application\SiteApplication;
+use Joomla\CMS\Document\Document;
+use Joomla\CMS\Language\Language;
+use Joomla\CMS\Menu\SiteMenu;
+use Joomla\Registry\Registry;
+
 defined('_JEXEC') or die();
+
+/**
+ * @var object          $module
+ * @var array           $attribs
+ * @var array           $chrome
+ * @var SiteApplication $app
+ * @var string          $scope
+ * @var Registry        $params
+ * @var string          $template
+ * @var string          $path
+ * @var Language        $lang
+ * @var string          $coreLanguageDirectory
+ * @var string          $extensionLanguageDirectory
+ * @var array           $langPaths
+ * @var string          $content
+ * @var Document        $document
+ * @var string          $langSite
+ * @var string          $introtext
+ * @var array           $amountAttribs
+ * @var string          $amountLine
+ * @var array           $currencies
+ * @var array           $availableCurrencies
+ * @var integer         $currencyCount
+ * @var string          $fe_c
+ * @var array           $returnMenuListIds
+ * @var int             $itemId
+ * @var int             $index
+ * @var SiteMenu        $menu
+ * @var string          $link
+ * @var array           $linkOfMenuItems
+ * @var string          $target
+ * @var string          $widthOfModule
+ * @var string          $use_sticky_hover
+ * @var string          $horizontal_reference_side
+ * @var string          $horizontal_distance
+ * @var string          $vertical_reference_side
+ * @var string          $vertical_distance
+ * @var string          $sticky
+ */
 
 echo $sticky;
 echo $introtext;
