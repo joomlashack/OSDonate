@@ -1,21 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<extension version="3.7" type="module" client="site" method="upgrade">
+<extension version="3.9" type="module" client="site" method="upgrade">
     <name>MOD_OSDONATE</name>
     <author>Joomlashack</author>
-    <creationDate>June 05 2019</creationDate>
-    <copyright>Copyright (C) 2011-2019 Joomlashack.com, All rights reserved</copyright>
+    <creationDate>January 22 2020</creationDate>
+    <copyright>Copyright 2011-2020 Joomlashack.com, All rights reserved</copyright>
     <license>GPL v3</license>
     <authorEmail>help@joomlashack.com</authorEmail>
     <authorUrl>http://www.joomlashack.com</authorUrl>
-    <version>1.4.5</version>
+    <version>1.5.7</version>
     <variant>FREE</variant>
     <description>MOD_OSDONATE_DESCRIPTION</description>
 
     <scriptfile>script.installer.php</scriptfile>
-
-    <languages folder="language">
-        <language tag="en-GB">en-GB/en-GB.mod_osdonate.ini</language>
-    </languages>
 
     <files>
         <filename module="mod_osdonate">mod_osdonate.php</filename>
@@ -247,7 +243,8 @@
         <element publish="true">osdonate</element>
         <namespace>OSDonate</namespace>
         <license>free</license>
-        <targetplatform>3.*</targetplatform>
+        <targetplatform>3.9</targetplatform>
+
         <relatedExtensions>
             <extension type="library"
                        element="allediaframework">AllediaFramework</extension>
