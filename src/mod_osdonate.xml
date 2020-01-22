@@ -2,12 +2,12 @@
 <extension version="3.9" type="module" client="site" method="upgrade">
     <name>MOD_OSDONATE</name>
     <author>Joomlashack</author>
-    <creationDate>June 05 2019</creationDate>
+    <creationDate>January 22 2020</creationDate>
     <copyright>Copyright 2011-2020 Joomlashack.com, All rights reserved</copyright>
     <license>GPL v3</license>
     <authorEmail>help@joomlashack.com</authorEmail>
     <authorUrl>http://www.joomlashack.com</authorUrl>
-    <version>1.4.5</version>
+    <version>1.5.7</version>
     <variant>FREE</variant>
     <description>MOD_OSDONATE_DESCRIPTION</description>
 
