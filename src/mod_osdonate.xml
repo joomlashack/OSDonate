@@ -13,10 +13,6 @@
 
     <scriptfile>script.installer.php</scriptfile>
 
-    <languages folder="language">
-        <language tag="en-GB">en-GB/en-GB.mod_osdonate.ini</language>
-    </languages>
-
     <files>
         <filename module="mod_osdonate">mod_osdonate.php</filename>
         <filename>include.php</filename>
