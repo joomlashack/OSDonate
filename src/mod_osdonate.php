@@ -23,10 +23,32 @@
  */
 
 use Alledia\OSDonate\Free\Helper;
+use Joomla\CMS\Application\SiteApplication;
+use Joomla\CMS\HTML\HTMLHelper;
+use Joomla\CMS\Language\Language;
+use Joomla\CMS\Router\Route;
+use Joomla\CMS\Uri\Uri;
+use Joomla\Registry\Registry;
 use Joomla\Utilities\ArrayHelper;
 
 // no direct access
 defined('_JEXEC') or die();
+
+/**
+ * @var object          $module
+ * @var string[]        $attribs
+ * @var array           $chrome
+ * @var SiteApplication $app
+ * @var string          $scope
+ * @var Registry        $params
+ * @var string          $template
+ * @var string          $path
+ * @var Language        $lang
+ * @var string          $coreLanguageDirectory
+ * @var string          $extensionLanguageDirectory
+ * @var string[]        $langPaths
+ * @var string          $content
+ */
 
 if ((include 'include.php') == false) {
     return;
