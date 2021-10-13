@@ -4,12 +4,12 @@
     <author>Joomlashack</author>
     <creationDate>January 22 2020</creationDate>
     <copyright>Copyright 2011-2020 Joomlashack.com, All rights reserved</copyright>
-    <license>GPL v3</license>
+    <license>GNU GPL; see LICENSE file</license>
     <authorEmail>help@joomlashack.com</authorEmail>
-    <authorUrl>http://www.joomlashack.com</authorUrl>
+    <authorUrl>https://www.joomlashack.com</authorUrl>
     <version>1.5.7</version>
-    <variant>FREE</variant>
     <description>MOD_OSDONATE_DESCRIPTION</description>
+    <variant>FREE</variant>
 
     <scriptfile>script.installer.php</scriptfile>
 
