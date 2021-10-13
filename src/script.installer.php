@@ -23,23 +23,19 @@
 
 defined('_JEXEC') or die();
 
-require_once 'library/Installer/include.php';
+require_once __DIR__ . '/library/Installer/include.php';
 
 use Alledia\Installer\AbstractScript;
+use Joomla\CMS\Filesystem\File;
 use Joomla\CMS\Filesystem\Folder;
 
-/**
- * Custom installer script
- */
 class Mod_OSDonateInstallerScript extends AbstractScript
 {
-    public function postFlight($type, $parent)
+    public function customPostFlight($type, $parent)
     {
-        parent::postFlight($type, $parent);
-
         $files = Folder::files(JPATH_SITE . '/language', 'mod_osdonate', true, true);
         foreach ($files as $file) {
-            @unlink($file);
+            File::delete($file);
         }
     }
 }
