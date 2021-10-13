@@ -24,21 +24,30 @@
 defined('_JEXEC') or die();
 
 use Alledia\Framework\AutoLoader;
+use Joomla\CMS\Factory;
 
-if (!defined('MOD_OSDONATE_LOADED')) {
-    define('MOD_OSDONATE_LOADED', 1);
+try {
+    $frameworkPath = JPATH_SITE . '/libraries/allediaframework/include.php';
+    if (!(is_file($frameworkPath) && include $frameworkPath)) {
+        $app = Factory::getApplication();
 
-    // Alledia Framework
-    if (!defined('ALLEDIA_FRAMEWORK_LOADED')) {
-        $allediaFrameworkPath = JPATH_SITE . '/libraries/allediaframework/include.php';
-
-        if (file_exists($allediaFrameworkPath)) {
-            require_once $allediaFrameworkPath;
-        } else {
-            JFactory::getApplication()
-                ->enqueueMessage('[OSDonate] Alledia framework not found', 'error');
+        if ($app->isClient('administrator')) {
+            $app->enqueueMessage('[OSMap] Joomlashack framework not found', 'error');
         }
+        return false;
     }
 
-    AutoLoader::register('Alledia\OSDonate', JPATH_SITE . '/modules/mod_osdonate/library');
+    if (defined('ALLEDIA_FRAMEWORK_LOADED') && !defined('MOD_OSDONATE_LOADED')) {
+        define('MOD_OSDONATE_LOADED', 1);
+
+        AutoLoader::register('Alledia\OSDonate', JPATH_SITE . '/modules/mod_osdonate/library');
+    }
+
+} catch (Throwable $error) {
+    Factory::getApplication()->enqueueMessage('[OSDonate] Unable to initialize: ' . $error->getMessage(), 'error');
+
+    return false;
+
 }
+
+return defined('ALLEDIA_FRAMEWORK_LOADED') && defined('OSDONTATE_LOADED');

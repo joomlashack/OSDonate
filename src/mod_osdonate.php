@@ -28,7 +28,9 @@ use Joomla\Utilities\ArrayHelper;
 // no direct access
 defined('_JEXEC') or die();
 
-require_once 'include.php';
+if ((include 'include.php') == false) {
+    return;
+}
 
 //load css
 $document = JFactory::getDocument();
