@@ -90,4 +90,3 @@ echo $introtext;
     <input type="image" src="<?php echo $params->get('pp_image', ''); ?>" name="submit" alt="PayPal secure payments."/>
     <input type="hidden" name="lc" value="<?php echo $langSite; ?>">
 </form>
-</div>

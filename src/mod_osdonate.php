@@ -159,10 +159,10 @@ if ($currencyCount === 0) {
     }
 }
 
-$returnMenuListIds = array(
+$returnMenuListIds = [
     $params->get('return', ''),
     $params->get('cancel_return', '')
-);
+];
 
 foreach ($returnMenuListIds as $index => $itemId) {
     // Check if the $itemId is a number or not (legacy params)
@@ -175,8 +175,8 @@ foreach ($returnMenuListIds as $index => $itemId) {
         $link = $itemId;
     }
 
-    if (JUri::isInternal($link)) {
-        $linkOfMenuItems[$index] = Helper::stripDoubleSlashes(JUri::base()) . JRoute::_('index.php?Itemid=' . $itemId);
+    if (Uri::isInternal($link)) {
+        $linkOfMenuItems[$index] = Helper::stripDoubleSlashes(JUri::base()) . Route::_('index.php?Itemid=' . $itemId);
 
     } else {
         $linkOfMenuItems[$index] = $link;
@@ -194,7 +194,7 @@ $vertical_distance         = $params->get('vertical_distance');
 $sticky                    = '';
 
 if ($use_sticky_hover == 1) {
-    JHtml::_('script', 'mod_osdonate/stickyHoverOptions.js', array('relative' => true));
+    HTMLHelper::_('script', 'mod_osdonate/stickyHoverOptions.js', ['relative' => true]);
 
     $stickyStyles  = array(
         $horizontal_reference_side . ':' . $horizontal_distance . 'px',
@@ -216,3 +216,5 @@ if ($use_sticky_hover == 1) {
 }
 
 require JModuleHelper::getLayoutPath('mod_osdonate', $params->get('layout', 'default'));
+
+echo '</div>';
