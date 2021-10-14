@@ -24,6 +24,7 @@
 
 use Alledia\OSDonate\Free\Helper;
 use Joomla\CMS\Application\SiteApplication;
+use Joomla\CMS\Factory;
 use Joomla\CMS\Helper\ModuleHelper;
 use Joomla\CMS\HTML\HTMLHelper;
 use Joomla\CMS\Language\Language;
@@ -54,7 +55,7 @@ if ((include 'include.php') == false) {
 }
 
 $helper = new Helper($params);
-HTMLHelper::_('stylesheet', 'mod_osdonate/style.css', ['relative' => true]);
+HTMLHelper::_('stylesheet', 'mod_osdonate/style.min.css', ['relative' => true]);
 
 /** @deprecated v2.0.0: Use native document loading */
 $document = Factory::getDocument();
