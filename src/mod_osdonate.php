@@ -56,6 +56,9 @@ if ((include 'include.php') == false) {
 $helper = new Helper($params);
 HTMLHelper::_('stylesheet', 'mod_osdonate/style.css', ['relative' => true]);
 
+/** @deprecated v2.0.0: Use native document loading */
+$document = Factory::getDocument();
+
 /** @deprecated v2.0.0: Use Helper::getSiteLanguage() directly */
 $langSite = $helper->getSiteLanguage();
 
