@@ -16,17 +16,18 @@
     <files>
         <filename module="mod_osdonate">mod_osdonate.php</filename>
         <filename>include.php</filename>
-        <folder>tmpl</folder>
-        <folder>library</folder>
-        <folder>language</folder>
+
         <folder>form</folder>
+        <folder>language</folder>
+        <folder>library</folder>
+        <folder>tmpl</folder>
         <folder>views</folder>
     </files>
 
     <media destination="mod_osdonate" folder="media">
         <folder>css</folder>
-        <folder>js</folder>
         <folder>images</folder>
+        <folder>js</folder>
     </media>
 
     <config>
@@ -59,8 +60,7 @@
 
                 <field name="business"
                        type="email"
-                       size="32"
-                       default="email@example.com"
+                       hint="email@example.com"
                        label="MOD_OSDONATE_PP_CREDENTIALS_LABEL"
                        description="MOD_OSDONATE_PP_CREDENTIALS_DESC"/>
 
@@ -71,7 +71,6 @@
 
                 <field name="pp_image"
                        type="url"
-                       size="64"
                        default="https://www.paypal.com/en_US/i/btn/btn_donateCC_LG.gif"
                        label="MOD_OSDONATE_PP_BUTTON_IMAGE_LABEL"
                        description="MOD_OSDONATE_PP_BUTTON_IMAGE_DESC"/>
@@ -90,14 +89,12 @@
 
                 <field name="item_name"
                        type="text"
-                       size="64"
-                       default="Donate to example.com"
+                       hint="Donate to example.com"
                        label="MOD_OSDONATE_PP_DONATION_DESC_LABEL"
                        description="MOD_OSDONATE_PP_DONATION_DESC_DESC"/>
 
                 <field name="currencies"
                        type="text"
-                       size="64"
                        maxlength="100"
                        default="USD,EUR,GBP,CHF,AUD,HKD,CAD,JPY,NZD,SGD,SEK,DKK,PLN,NOK,HUF,CZK,ILS,MXN"
                        label="MOD_OSDONATE_CURRENCIES_LABEL"
@@ -152,7 +149,6 @@
 
                 <field name="amount"
                        type="text"
-                       size="5"
                        default=""
                        label="MOD_OSDONATE_AMOUNT_LABEL"
                        description="MOD_OSDONATE_AMOUNT_DESC"/>
@@ -226,7 +222,6 @@
             <fieldset name="advanced">
                 <field name="moduleclass_sfx"
                        type="textarea"
-                       default=""
                        rows="3"
                        label="MOD_OSDONATE_MODULE_CLASS_SUFFIX_LABEL"
                        description="MOD_OSDONATE_MODULE_CLASS_SUFFIX_DESC"/>
