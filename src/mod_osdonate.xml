@@ -128,6 +128,7 @@
 
                 <field name="layout"
                        type="modulelayout"
+                       class="form-select"
                        label="MOD_OSDONATE_LAYOUT_LABEL"
                        default="default"
                        description="MOD_OSDONATE_LAYOUT_DESC"/>
