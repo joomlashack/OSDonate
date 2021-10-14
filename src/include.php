@@ -36,6 +36,7 @@ try {
         }
         return false;
     }
+    unset($frameworkPath);
 
     if (defined('ALLEDIA_FRAMEWORK_LOADED') && !defined('MOD_OSDONATE_LOADED')) {
         define('MOD_OSDONATE_LOADED', 1);
@@ -50,4 +51,4 @@ try {
 
 }
 
-return defined('ALLEDIA_FRAMEWORK_LOADED') && defined('OSDONTATE_LOADED');
+return defined('ALLEDIA_FRAMEWORK_LOADED') && defined('MOD_OSDONATE_LOADED');
