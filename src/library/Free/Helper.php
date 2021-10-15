@@ -237,7 +237,16 @@ class Helper
                         $currencies
                     );
 
-                    $inputField = HTMLHelper::_('select.genericlist', $currencyOptions, 'currency_code') . "\n";
+                    $inputField = HTMLHelper::_(
+                        'select.genericlist',
+                        $currencyOptions,
+                        'currency_code',
+                        null,
+                        'value',
+                        'text',
+                        null,
+                        'currency_code_' . $this->params->get('module.id')
+                    );
 
                 } else {
                     $inputField = '<input type="hidden" name="currency_code" value="' . $currencies[0] . '" />' . "\n";
