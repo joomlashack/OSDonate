@@ -253,5 +253,12 @@
         </relatedExtensions>
 
         <include>ShackDefaultFiles</include>
+
+        <obsolete>
+            <preflight>
+                <folder>/media/mod_osdonate</folder>
+                <folder>/modules/mod_osdonate/tmpl</folder>
+            </preflight>
+        </obsolete>
     </alledia>
 </extension>
