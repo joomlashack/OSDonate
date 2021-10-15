@@ -24,57 +24,67 @@
 jQuery(document).ready(function($) {
     'use strict';
 
-    let setStickyHoverStyle = function(osdonate) {
-        //declaring selectors
-        let parentOfOSDonate = $(osdonate).parent('div'),
-            OSDonate         = $(osdonate);
+    let stickyClass = 'osdonate-sticky-hover',
+        minimumWidth = 768;
 
-        //moving header text inside of #osdonatesticky
-        OSDonate.prev().prependTo(OSDonate);
+    /**
+     * @param {string} selector
+     *
+     * @return void
+     */
+    let setStickyHoverStyle = function(selector) {
+        let $parent   = $(selector).parent('div'),
+            $osdonate = $(selector);
 
-        parentOfOSDonate.css({
+        // Move header text into the form container
+        $osdonate.prev().prependTo($osdonate);
+
+        $parent.css({
             'visibility': 'hidden',
             'margin'    : 0,
             'padding'   : 0,
             'min-height': 0,
             'border'    : 0
         });
-        OSDonate.attr('style', function() {
-            console.log(osdonate, $(osdonate).data());
-            return $(osdonate).data('style');
+
+        $osdonate.addClass(stickyClass);
+        $osdonate.attr('style', function() {
+            return $(selector).data('style');
         });
-    }
+    };
 
-    function disableStickyHoverStyle(osdonate) {
-        //declaring selectors
-        let parentOfOSDonate = $(osdonate).parent('div'),
-            OSDonate         = $(osdonate);
+    /**
+     * @param {string} selector
+     *
+     * @return void
+     */
+    let disableStickyHoverStyle = function(selector) {
+        let $parent   = $(selector).parent('div'),
+            $osdonate = $(selector),
+            $header = $(selector + ' h3');
 
-        //moving header text back out of #osdonatesticky
-        let headerText = $(osdonate + ' h3').detach();
-        parentOfOSDonate.prepend(headerText);
+        // Move header back to original container
+        $parent.prepend($header.detach()).attr('style', '');
 
-        parentOfOSDonate.attr('style', '');
-        OSDonate.attr('style', '');
-    }
+        $osdonate.attr('style', '').removeClass(stickyClass)
+    };
 
-    let $stickies = $('.osdonate-sticky-hover');
+    let $stickies = $('.' + stickyClass);
 
     $stickies.each(function() {
-        let osdonate = '#' + this.id,
-            $this = $(this);
+        let $this = $(this);
 
         $this.data('style', $this.attr('style'));
     });
 
     $(window).resize(function() {
         $stickies.each(function() {
-            let osdonate = '#' + this.id;
+            let selector = '#' + this.id;
 
-            if ($(window).width() <= 768) {
-                disableStickyHoverStyle(osdonate);
+            if ($(window).width() <= minimumWidth) {
+                disableStickyHoverStyle(selector);
             } else {
-                setStickyHoverStyle(osdonate);
+                setStickyHoverStyle(selector);
             }
         });
     });
