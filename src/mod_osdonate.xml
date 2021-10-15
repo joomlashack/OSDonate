@@ -2,32 +2,32 @@
 <extension version="3.9" type="module" client="site" method="upgrade">
     <name>MOD_OSDONATE</name>
     <author>Joomlashack</author>
-    <creationDate>January 22 2020</creationDate>
-    <copyright>Copyright 2011-2020 Joomlashack.com, All rights reserved</copyright>
-    <license>GPL v3</license>
+    <creationDate>October 15 2021</creationDate>
+    <copyright>Copyright 2011-2021 Joomlashack.com, All rights reserved</copyright>
+    <license>GNU GPL; see LICENSE file</license>
     <authorEmail>help@joomlashack.com</authorEmail>
-    <authorUrl>http://www.joomlashack.com</authorUrl>
-    <version>1.5.7</version>
-    <variant>FREE</variant>
+    <authorUrl>https://www.joomlashack.com</authorUrl>
+    <version>2.0.0rc1</version>
     <description>MOD_OSDONATE_DESCRIPTION</description>
+    <variant>FREE</variant>
 
     <scriptfile>script.installer.php</scriptfile>
 
     <files>
         <filename module="mod_osdonate">mod_osdonate.php</filename>
         <filename>include.php</filename>
-        <folder>tmpl</folder>
-        <folder>library</folder>
-        <folder>language</folder>
+
         <folder>form</folder>
+        <folder>language</folder>
+        <folder>library</folder>
+        <folder>tmpl</folder>
         <folder>views</folder>
     </files>
 
     <media destination="mod_osdonate" folder="media">
         <folder>css</folder>
-        <folder>js</folder>
         <folder>images</folder>
-        <folder>fonts</folder>
+        <folder>js</folder>
     </media>
 
     <config>
@@ -60,8 +60,7 @@
 
                 <field name="business"
                        type="email"
-                       size="32"
-                       default="email@example.com"
+                       hint="email@example.com"
                        label="MOD_OSDONATE_PP_CREDENTIALS_LABEL"
                        description="MOD_OSDONATE_PP_CREDENTIALS_DESC"/>
 
@@ -72,7 +71,6 @@
 
                 <field name="pp_image"
                        type="url"
-                       size="64"
                        default="https://www.paypal.com/en_US/i/btn/btn_donateCC_LG.gif"
                        label="MOD_OSDONATE_PP_BUTTON_IMAGE_LABEL"
                        description="MOD_OSDONATE_PP_BUTTON_IMAGE_DESC"/>
@@ -91,14 +89,12 @@
 
                 <field name="item_name"
                        type="text"
-                       size="64"
-                       default="Donate to example.com"
+                       hint="Donate to example.com"
                        label="MOD_OSDONATE_PP_DONATION_DESC_LABEL"
                        description="MOD_OSDONATE_PP_DONATION_DESC_DESC"/>
 
                 <field name="currencies"
                        type="text"
-                       size="64"
                        maxlength="100"
                        default="USD,EUR,GBP,CHF,AUD,HKD,CAD,JPY,NZD,SGD,SEK,DKK,PLN,NOK,HUF,CZK,ILS,MXN"
                        label="MOD_OSDONATE_CURRENCIES_LABEL"
@@ -129,6 +125,7 @@
 
                 <field name="layout"
                        type="modulelayout"
+                       class="form-select"
                        label="MOD_OSDONATE_LAYOUT_LABEL"
                        default="default"
                        description="MOD_OSDONATE_LAYOUT_DESC"/>
@@ -152,7 +149,6 @@
 
                 <field name="amount"
                        type="text"
-                       size="5"
                        default=""
                        label="MOD_OSDONATE_AMOUNT_LABEL"
                        description="MOD_OSDONATE_AMOUNT_DESC"/>
@@ -226,7 +222,6 @@
             <fieldset name="advanced">
                 <field name="moduleclass_sfx"
                        type="textarea"
-                       default=""
                        rows="3"
                        label="MOD_OSDONATE_MODULE_CLASS_SUFFIX_LABEL"
                        description="MOD_OSDONATE_MODULE_CLASS_SUFFIX_DESC"/>
@@ -243,19 +238,27 @@
         <element publish="true">osdonate</element>
         <namespace>OSDonate</namespace>
         <license>free</license>
+        <phpminimum>7.2.5</phpminimum>
         <targetplatform>3.9</targetplatform>
 
         <relatedExtensions>
             <extension type="library"
-                       element="allediaframework">AllediaFramework</extension>
+                       element="allediaframework">ShackFramework</extension>
 
             <extension type="plugin"
                        group="system"
-                       element="ossystem"
+                       element="osmylicensesmanager"
                        publish="true"
-                       ordering="first">OSSystem</extension>
+                       ordering="last">ShackExtensionSupport</extension>
         </relatedExtensions>
 
-        <include>AllediaFreeDefaultFiles</include>
+        <include>ShackDefaultFiles</include>
+
+        <obsolete>
+            <preflight>
+                <folder>/media/mod_osdonate</folder>
+                <folder>/modules/mod_osdonate/tmpl</folder>
+            </preflight>
+        </obsolete>
     </alledia>
 </extension>
