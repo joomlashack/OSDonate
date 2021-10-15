@@ -127,7 +127,7 @@ class Helper
                     'type'      => 'text',
                     'size'      => 4,
                     'maxlength' => 10,
-                    'class='    => 'osdonate-amount'
+                    'class'     => 'osdonate-amount'
                 ]
             );
 
