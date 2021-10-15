@@ -85,10 +85,8 @@ class Helper
 
         $this->params->set('links', $this->getReturnMenus());
 
-        $moduleParams = (new Registry($module->params))->toObject();
-
         $this->params->set('module', $module);
-        $this->params->set('module.params', $moduleParams);
+        $this->params->set('module.params', $module->params);
     }
 
     /**
@@ -254,7 +252,11 @@ class Helper
      */
     public function getOpeningDiv(): string
     {
-        if ($this->params->get('use_sticky_hover', '0') == 1) {
+        $attribs = [
+            'id' => 'osdonate_' . $this->params->get('module.id')
+        ];
+
+        if ($this->params->get('use_sticky_hover', false)) {
             HTMLHelper::_('script', 'mod_osdonate/stickyHoverOptions.js', ['relative' => true]);
 
             $width              = $this->params->get('width_of_sticky_hover', 200);
@@ -270,19 +272,12 @@ class Helper
                 'z-index:1000',
                 'visibility:visible'
             ];
-            $attribs      = [
-                'id'    => 'osdonatesticky',
+            $attribs      = array_merge(
+                $attribs,
+                [
                 'class' => 'osdonate-sticky-hover',
                 'style' => join(';', $stickyStyles)
-            ];
-
-
-        } else {
-            $attribs = ['id' => 'osdonatestatic'];
-        }
-
-        if (empty($attribs)) {
-            return '<div>';
+            ]);
         }
 
         return sprintf('<div  %s>', ArrayHelper::toString($attribs));

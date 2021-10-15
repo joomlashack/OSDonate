@@ -21,23 +21,23 @@
  * along with OSDonate.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#osdonate-form input[type="text"],
-#osdonate-form select {
+.osdonate-form input[type="text"],
+.osdonate-form select {
   margin: 0 0 15px;
 }
 
-#osdonate-form input[type="text"] {
+.osdonate-form input[type="text"] {
   width: 50px;
   min-width: 50px;
 }
 
-#osdonate-form input[type="image"] {
+.osdonate-form input[type="image"] {
   width: auto;
   height: auto;
   max-width: 100%;
 }
 
-#osdonate-form select {
+.osdonate-form select {
   width: 75px;
   min-width: 75px;
   box-sizing: border-box;
@@ -58,7 +58,7 @@
   position: fixed;
 }
 
-#osdonatesticky {
+.osdonate-sticky-hover {
   background: #fff;
   color: #333;
   padding: 20px;

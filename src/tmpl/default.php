@@ -57,7 +57,9 @@ defined('_JEXEC') or die();
 
 echo $helper->getIntroText();
 ?>
-<form class="osdonate-form" id="osdonate-form" action="https://www.paypal.com/cgi-bin/webscr"
+<form id="<?php echo 'osdonate-form-' . $params->get('module.id'); ?>"
+      class="osdonate-form"
+      action="https://www.paypal.com/cgi-bin/webscr"
       method="post" <?php echo $target; ?>>
     <input type="hidden" name="cmd" value="_donations"/>
     <input type="hidden" name="business" value="<?php echo $params->get('business', ''); ?>"/>
