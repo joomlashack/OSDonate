@@ -252,8 +252,15 @@ class Helper
      */
     public function getOpeningDiv(): string
     {
+        $layout = $this->params->get('layout');
+        if (strpos($layout, ':') !== false) {
+            $layout = explode(':', $layout);
+            $layout = array_pop($layout);
+        }
+
         $attribs = [
-            'id' => 'osdonate_' . $this->params->get('module.id')
+            'id'    => 'osdonate_' . $this->params->get('module.id'),
+            'class' => 'osdonate-container osdonate-' . $layout
         ];
 
         if ($this->params->get('use_sticky_hover', false)) {
@@ -275,9 +282,9 @@ class Helper
             $attribs      = array_merge(
                 $attribs,
                 [
-                'class' => 'osdonate-sticky-hover',
-                'style' => join(';', $stickyStyles)
-            ]);
+                    'class' => $attribs['class'] . ' osdonate-sticky-hover',
+                    'style' => join(';', $stickyStyles)
+                ]);
         }
 
         return sprintf('<div  %s>', ArrayHelper::toString($attribs));
