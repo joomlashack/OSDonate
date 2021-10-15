@@ -53,7 +53,7 @@ if ((include 'include.php') == false) {
     return;
 }
 
-$helper = new Helper($params);
+$helper = new Helper($params, $module);
 HTMLHelper::_('stylesheet', 'mod_osdonate/style.min.css', ['relative' => true]);
 
 /** @deprecated v2.0.0: Use native document loading */

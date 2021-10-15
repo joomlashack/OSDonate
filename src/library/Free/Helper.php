@@ -73,11 +73,22 @@ class Helper
      */
     protected $returnLinks = null;
 
-    public function __construct(Registry $params)
+    /**
+     * @param Registry $params
+     * @param object   $module
+     *
+     * @return void
+     */
+    public function __construct(Registry $params, object $module)
     {
         $this->params = $params;
 
         $this->params->set('links', $this->getReturnMenus());
+
+        $moduleParams = (new Registry($module->params))->toObject();
+
+        $this->params->set('module', $module);
+        $this->params->set('module.params', $moduleParams);
     }
 
     /**
