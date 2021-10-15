@@ -273,7 +273,7 @@ class Helper
         ];
 
         if ($this->params->get('use_sticky_hover', false)) {
-            HTMLHelper::_('script', 'mod_osdonate/stickyHoverOptions.js', ['relative' => true]);
+            HTMLHelper::_('script', 'mod_osdonate/stickies.min.js', ['relative' => true]);
 
             $width              = $this->params->get('width_of_sticky_hover', 200);
             $horizontal         = $this->params->get('horizontal_reference_side');

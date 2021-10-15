@@ -241,6 +241,10 @@
         <phpminimum>7.2.5</phpminimum>
         <targetplatform>3.9</targetplatform>
 
+        <minify>
+            <script>media/js/stickies.js</script>
+        </minify>
+
         <relatedExtensions>
             <extension type="library"
                        element="allediaframework">ShackFramework</extension>
