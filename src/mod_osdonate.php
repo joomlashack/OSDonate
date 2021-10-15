@@ -50,7 +50,6 @@ defined('_JEXEC') or die();
  */
 
 if ((include 'include.php') == false) {
-    echo '<p>fail</p>';
     return;
 }
 
