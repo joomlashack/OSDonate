@@ -53,6 +53,8 @@ if ((include 'include.php') == false) {
     return;
 }
 
+HTMLHelper::_('jquery.framework');
+
 $helper = new Helper($params, $module);
 HTMLHelper::_('stylesheet', 'mod_osdonate/style.min.css', ['relative' => true]);
 
