@@ -24,7 +24,7 @@
 jQuery(document).ready(function($) {
     'use strict';
 
-    let stickyClass = 'osdonate-sticky-hover',
+    let stickyClass  = 'osdonate-sticky-hover',
         minimumWidth = 768;
 
     /**
@@ -33,11 +33,14 @@ jQuery(document).ready(function($) {
      * @return void
      */
     let setStickyHoverStyle = function(selector) {
-        let $parent   = $(selector).parent('div'),
-            $osdonate = $(selector);
+        let $osdonate = $(selector),
+            $parent   = $osdonate.parent(),
+            $header   = $osdonate.prev();
 
-        // Move header text into the form container
-        $osdonate.prev().prependTo($osdonate);
+        if ($header.length === 0) {
+            $header = $parent.parent().find(':header');
+        }
+        $header.prependTo($osdonate);
 
         $parent.css({
             'visibility': 'hidden',
@@ -59,9 +62,9 @@ jQuery(document).ready(function($) {
      * @return void
      */
     let disableStickyHoverStyle = function(selector) {
-        let $parent   = $(selector).parent('div'),
-            $osdonate = $(selector),
-            $header = $(selector + ' h3');
+        let $osdonate = $(selector),
+            $parent   = $osdonate.parent('div'),
+            $header   = $(selector + ' h3');
 
         // Move header back to original container
         $parent.prepend($header.detach()).attr('style', '');
