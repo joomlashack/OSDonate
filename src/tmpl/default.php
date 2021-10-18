@@ -24,34 +24,29 @@
 
 use Alledia\OSDonate\Free\Helper;
 use Joomla\CMS\Application\SiteApplication;
-use Joomla\CMS\Language\Language;
+use Joomla\CMS\Document\HtmlDocument;
+use Joomla\CMS\Input\Input;
 use Joomla\CMS\Uri\Uri;
 use Joomla\Registry\Registry;
 
 defined('_JEXEC') or die();
 
 /**
+ * @var string          $path
  * @var object          $module
- * @var string[]        $attribs
- * @var string[]        $chrome
  * @var SiteApplication $app
- * @var NULL            $scope
+ * @var Input           $input           Only Joomla 4
  * @var Registry        $params
  * @var string          $template
- * @var string          $path
- * @var Language        $lang
- * @var string          $coreLanguageDirectory
- * @var string          $extensionLanguageDirectory
- * @var array           $langPaths
- * @var string          $content
  * @var Helper          $helper
+ * @var HtmlDocument    $document
+ * @var string[]        $currencies
+ * @var string          $target
  * @var string          $langSite        @deprecated v2.0.0
  * @var string          $introtext       @deprecated v2.0.0
  * @var string          $amountLine      @deprecated v2.0.0
- * @var array           $currencies
+ * @var array           $linkOfMenuItems @deprecated v2.0.0
  * @var string          $fe_c            @deprecated v2.0.0
- * @var string[]        $linkOfMenuItems @deprecated v2.0.0
- * @var string          $target
  * @var string          $sticky          @deprecated v2.0.0
  */
 

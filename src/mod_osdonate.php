@@ -27,7 +27,7 @@ use Joomla\CMS\Application\SiteApplication;
 use Joomla\CMS\Factory;
 use Joomla\CMS\Helper\ModuleHelper;
 use Joomla\CMS\HTML\HTMLHelper;
-use Joomla\CMS\Language\Language;
+use Joomla\CMS\Input\Input;
 use Joomla\Registry\Registry;
 
 // no direct access
@@ -35,18 +35,11 @@ defined('_JEXEC') or die();
 
 /**
  * @var object          $module
- * @var string[]        $attribs
- * @var array           $chrome
  * @var SiteApplication $app
- * @var string          $scope
  * @var Registry        $params
  * @var string          $template
  * @var string          $path
- * @var Language        $lang
- * @var string          $coreLanguageDirectory
- * @var string          $extensionLanguageDirectory
- * @var string[]        $langPaths
- * @var string          $content
+ * @var Input           $input Only Joomla 4
  */
 
 if ((include 'include.php') == false) {
@@ -74,10 +67,10 @@ $amountLine = $helper->getAmountLine();
 $linkOfMenuItems = array_values($helper->getReturnMenus());
 
 /** @deprecated v2.0.0: Use Helper::getCurrencyField() directly */
-$fe_c            = $helper->getCurrencyCodeField();
+$fe_c = $helper->getCurrencyCodeField();
 
-$currencies      = $helper->getCurrencies();
-$target          = $params->get('open_new_window', 1) ? 'target="paypal"' : '';
+$currencies = $helper->getCurrencies();
+$target     = $params->get('open_new_window', 1) ? 'target="paypal"' : '';
 
 /** @deprecated v2.0.0: Don't display in templates */
 $sticky = $helper->getOpeningDiv();
