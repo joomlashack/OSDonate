@@ -29,7 +29,6 @@
 .osdonate-form input[type="text"] {
   width: 50px;
   min-width: 50px;
-  height: 30px;
 }
 
 .osdonate-form input[type="image"] {
@@ -41,7 +40,6 @@
 .osdonate-form select {
   width: 75px;
   min-width: 75px;
-  height: 30px;
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
