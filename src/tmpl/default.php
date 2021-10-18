@@ -61,7 +61,8 @@ echo $helper->getIntroText();
     <input type="hidden" name="return" value="<?php echo $params->get('links.return'); ?>"/>
     <input type="hidden" name="undefined_quantity" value="0"/>
     <input type="hidden" name="item_name" value="<?php echo $params->get('item_name', ''); ?>"/>
-    <?php echo $helper->getAmountLine() . $helper->getCurrencyCodeField(); ?>
+    <?php echo $helper->getAmountLine(); ?>
+    <?php echo $helper->getCurrencyCodeField(); ?>
     <input type="hidden" name="rm" value="2"/>
     <input type="hidden" name="charset" value="utf-8"/>
     <input type="hidden" name="no_shipping" value="1"/>
