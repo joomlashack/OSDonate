@@ -34,21 +34,19 @@ jQuery(document).ready(function($) {
      */
     let setStickyHoverStyle = function(selector) {
         let $osdonate = $(selector),
-            $parent   = $osdonate.parent(),
-            $header   = $osdonate.prev();
+            $module   = $osdonate.data('module'),
+            $header   = $osdonate.data('header');
 
-        if ($header.length === 0) {
-            $header = $parent.parent().find(':header');
+        if ($header.length) {
+            $header.prependTo($osdonate);
+            $module.css({
+                'visibility': 'hidden',
+                'margin'    : 0,
+                'padding'   : 0,
+                'min-height': 0,
+                'border'    : 0
+            });
         }
-        $header.prependTo($osdonate);
-
-        $parent.css({
-            'visibility': 'hidden',
-            'margin'    : 0,
-            'padding'   : 0,
-            'min-height': 0,
-            'border'    : 0
-        });
 
         $osdonate.addClass(stickyClass);
         $osdonate.attr('style', function() {
@@ -63,11 +61,11 @@ jQuery(document).ready(function($) {
      */
     let disableStickyHoverStyle = function(selector) {
         let $osdonate = $(selector),
-            $parent   = $osdonate.parent('div'),
-            $header   = $(selector + ' h3');
+            $module   = $osdonate.data('module'),
+            $header   = $osdonate.data('header');
 
         // Move header back to original container
-        $parent.prepend($header.detach()).attr('style', '');
+        $module.prepend($header.detach()).attr('style', '');
 
         $osdonate.attr('style', '').removeClass(stickyClass)
     };
@@ -75,9 +73,27 @@ jQuery(document).ready(function($) {
     let $stickies = $('.' + stickyClass);
 
     $stickies.each(function() {
-        let $this = $(this);
+        let $this   = $(this),
+            $module = null,
+            $header = null;
 
         $this.data('style', $this.attr('style'));
+
+        if ($this.data('joomla') < 4) {
+            // Joomla 3 module
+            $module = $this.parent($this.data('module'));
+            $header = $module.find($this.data('header') + ':first');
+
+        } else {
+            // Joomla 4+ module
+            $module = $this.parents('.card');
+            $header = $module.find('.card-header');
+        }
+
+        $this.data({
+            module: $module,
+            header: $header
+        });
     });
 
     $(window).resize(function() {

@@ -29,6 +29,7 @@ use Joomla\CMS\HTML\HTMLHelper;
 use Joomla\CMS\Language\Text;
 use Joomla\CMS\Router\Route;
 use Joomla\CMS\Uri\Uri;
+use Joomla\CMS\Version;
 use Joomla\Registry\Registry;
 use Joomla\Utilities\ArrayHelper;
 
@@ -268,8 +269,11 @@ class Helper
         }
 
         $attribs = [
-            'id'    => 'osdonate_' . $this->params->get('module.id'),
-            'class' => 'osdonate-container osdonate-' . $layout
+            'id'             => 'osdonate_' . $this->params->get('module.id'),
+            'class'          => 'osdonate-container osdonate-' . $layout,
+            'data-joomla'    => Version::MAJOR_VERSION,
+            'data-module'    => $this->params->get('module_tag'),
+            'data-header'    => $this->params->get('header_tag')
         ];
 
         if ($this->params->get('use_sticky_hover', false)) {
