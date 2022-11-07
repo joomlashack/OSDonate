@@ -32,7 +32,7 @@ try {
         $app = Factory::getApplication();
 
         if ($app->isClient('administrator')) {
-            $app->enqueueMessage('[OSMap] Joomlashack framework not found', 'error');
+            $app->enqueueMessage('[OSDonate] Joomlashack framework not found', 'error');
         }
         return false;
     }
