@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<extension version="3.9" type="module" client="site" method="upgrade">
+<extension type="module" client="site" method="upgrade">
     <name>MOD_OSDONATE</name>
     <author>Joomlashack</author>
-    <creationDate>October 19 2021</creationDate>
-    <copyright>Copyright 2011-2021 Joomlashack.com, All rights reserved</copyright>
-    <license>GNU GPL; see LICENSE file</license>
     <authorEmail>help@joomlashack.com</authorEmail>
-    <authorUrl>https://www.joomlashack.com</authorUrl>
-    <version>2.0.0</version>
+    <authorUrl>https://www.joomlashack.com/</authorUrl>
+    <copyright>Copyright 2022 Joomlashack.com, All rights reserved</copyright>
+    <license>GNU GPL; see LICENSE file</license>
     <description>MOD_OSDONATE_DESCRIPTION</description>
+    <version>2.0.0</version>
+    <creationDate>October 19 2021</creationDate>
     <variant>FREE</variant>
 
     <scriptfile>script.installer.php</scriptfile>
