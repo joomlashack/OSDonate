@@ -37,12 +37,13 @@
             <fieldset name="basic">
                 <field name="open_new_window"
                        type="radio"
+                       class="btn-group btn-group-yesno"
+                       layout="joomla.form.field.radio.switcher"
                        default="1"
                        label="MOD_OSDONATE_NEW_WINDOW_LABEL"
-                       description="MOD_OSDONATE_NEW_WINDOW_DESC"
-                       class="btn-group btn-group-yesno">
-                    <option value="1">JYES</option>
+                       description="MOD_OSDONATE_NEW_WINDOW_DESC">
                     <option value="0">JNO</option>
+                    <option value="1">JYES</option>
                 </field>
 
                 <field name="return"
@@ -105,22 +106,24 @@
 
                 <field name="show_text"
                        type="radio"
+                       class="btn-group btn-group-yesno"
+                       layout="joomla.form.field.radio.switcher"
                        default="1"
                        label="MOD_OSDONATE_SHOW_INTRO_TEXT_LABEL"
-                       description="MOD_OSDONATE_SHOW_INTRO_TEXTDESC"
-                       class="btn-group btn-group-yesno">
-                    <option value="1">JYES</option>
+                       description="MOD_OSDONATE_SHOW_INTRO_TEXTDESC">
                     <option value="0">JNO</option>
+                    <option value="1">JYES</option>
                 </field>
 
                 <field name="show_amount"
                        type="radio"
+                       class="btn-group btn-group-yesno"
+                       layout="joomla.form.field.radio.switcher"
                        default="1"
                        label="MOD_OSDONATE_SHOW_AMOUNT_FIELD_LABEL"
-                       description="MOD_OSDONATE_SHOW_AMOUNT_FIELD_DESC"
-                       class="btn-group btn-group-yesno">
-                    <option value="1">JYES</option>
+                       description="MOD_OSDONATE_SHOW_AMOUNT_FIELD_DESC">
                     <option value="0">JNO</option>
+                    <option value="1">JYES</option>
                 </field>
 
                 <field name="layout"
@@ -165,13 +168,13 @@
 
                 <field name="use_sticky_hover"
                        type="radio"
+                       class="btn-group btn-group-yesno"
+                       layout="joomla.form.field.radio.switcher"
                        default="0"
                        label="MOD_OSDONATE_STICKY_HOVER_OPTIONS_LABEL"
-                       description="MOD_OSDONATE_STICKY_HOVER_OPTIONS_DESC"
-                       class="btn-group btn-group-yesno">
-
-                    <option value="1">JYES</option>
+                       description="MOD_OSDONATE_STICKY_HOVER_OPTIONS_DESC">
                     <option value="0">JNO</option>
+                    <option value="1">JYES</option>
                 </field>
 
                 <field name="horizontal_reference_side"
