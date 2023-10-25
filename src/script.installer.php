@@ -21,17 +21,25 @@
  * along with OSDonate.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+use Alledia\Installer\AbstractScript;
+use Joomla\Filesystem\File;
+use Joomla\Filesystem\Folder;
+
+// phpcs:disable PSR1.Files.SideEffects
 defined('_JEXEC') or die();
 
 require_once __DIR__ . '/library/Installer/include.php';
 
-use Alledia\Installer\AbstractScript;
-use Joomla\CMS\Filesystem\File;
-use Joomla\CMS\Filesystem\Folder;
+// phpcs:enable PSR1.Files.SideEffects
+// phpcs:disable PSR1.Classes.ClassDeclaration.MissingNamespace
+// phpcs:disable Squiz.Classes.ValidClassName.NotCamelCaps
 
 class Mod_OSDonateInstallerScript extends AbstractScript
 {
-    public function customPostFlight($type, $parent)
+    /**
+     * @inheritDoc
+     */
+    protected function customPostFlight($type, $parent): void
     {
         $files = Folder::files(JPATH_SITE . '/language', 'mod_osdonate', true, true);
         foreach ($files as $file) {
