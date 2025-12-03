@@ -241,7 +241,7 @@
         <element publish="true">osdonate</element>
         <namespace>OSDonate</namespace>
         <license>free</license>
-        <phpminimum>7.2.5</phpminimum>
+        <phpminimum>7.4</phpminimum>
         <targetplatform>3.9</targetplatform>
 
         <minify>
