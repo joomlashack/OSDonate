@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @package   OSDonate
  * @contact   www.joomlashack.com, help@joomlashack.com
